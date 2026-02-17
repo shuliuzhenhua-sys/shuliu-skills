@@ -10,26 +10,13 @@ Local skills marketplace following the `jimliu/baoyu-skills` structure.
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
 ```
 
-Local development (current directory):
+## Update Skill
+
+When the skill is updated in this repository, reinstall the latest version:
 
 ```bash
-npx skills add ./ --skill banana-proxy
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
 ```
-
-Or register as a plugin marketplace in Claude Code:
-
-```bash
-/plugin marketplace add .
-```
-
-## Update Marketplace
-
-When local skills are updated:
-
-1. Run `/plugin` in Claude Code
-2. Go to **Marketplaces**
-3. Select **shuliu-skills**
-4. Choose **Update marketplace**
 
 ## Available Plugins
 

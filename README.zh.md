@@ -10,26 +10,13 @@
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
 ```
 
-本地调试（当前目录）：
+## 更新技能
+
+当仓库中的技能更新后，重新执行安装命令即可拉取最新版本：
 
 ```bash
-npx skills add ./ --skill banana-proxy
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
 ```
-
-或者在 Claude Code 中注册插件市场：
-
-```bash
-/plugin marketplace add .
-```
-
-## 更新目录
-
-本地技能更新后，按以下步骤刷新市场目录：
-
-1. 在 Claude Code 运行 `/plugin`
-2. 切换到 **Marketplaces**
-3. 选择 **shuliu-skills**
-4. 点击 **Update marketplace**
 
 ## 可用插件
 
