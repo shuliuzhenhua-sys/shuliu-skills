@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 - 2026-02-17
+
+### Documentation
+- Add `AGENTS.md` contributor guide.
+- Define mandatory release rules: tag every commit, update both changelogs for every change, and sync `AGENTS.md` when skills or skill structure changes.
+
 ## 0.1.0 - 2026-02-17
 
 ### Features
