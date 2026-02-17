@@ -8,6 +8,7 @@
 
 ```bash
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 ```
 
 ## 更新技能
@@ -16,6 +17,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana
 
 ```bash
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 ```
 
 ## 可用插件
@@ -23,6 +25,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana
 | 插件 | 说明 | 包含技能 |
 |------|------|----------|
 | **image-generation-skills** | 图片生成后端 | [banana-proxy](#banana-proxy) |
+| **douyin-tools** | 抖音分享链接解析工具 | [douyin-share-info](#douyin-share-info) |
 
 ## 可用技能
 
@@ -37,3 +40,15 @@ npx -y bun skills/banana-proxy/scripts/main.ts --prompt "一只猫" --image out.
 环境变量：
 
 - `BANANA_PROXY_API_KEY`（必填）
+
+### douyin-share-info
+
+通过 TikHub Douyin Web API 根据抖音分享链接获取作品基础信息，并提取封面/音频/视频的首个可用地址。
+
+```bash
+npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyin.com/xxxx/" --json
+```
+
+环境变量：
+
+- `TIKHUB_API_KEY`（必填）

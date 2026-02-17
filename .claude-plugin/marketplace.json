@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Local skills marketplace for shuliu workflows",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
@@ -15,6 +15,15 @@
       "strict": false,
       "skills": [
         "./skills/banana-proxy"
+      ]
+    },
+    {
+      "name": "douyin-tools",
+      "description": "抖音分享链接解析工具",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/douyin-share-info"
       ]
     }
   ]

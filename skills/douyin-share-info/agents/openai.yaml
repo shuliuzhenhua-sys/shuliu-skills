@@ -1,0 +1,4 @@
+interface:
+  display_name: "抖音分享链接解析"
+  short_description: "通过分享链接获取抖音视频基础信息，并提取封面/音频/视频直链。"
+  default_prompt: "请根据抖音分享链接调用 TikHub Web API，返回结构化基础信息，封面/音频/视频地址均取第一个 URL。"
