@@ -7,7 +7,13 @@
 ## 安装
 
 ```bash
-npx skills add ./
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
+```
+
+本地调试（当前目录）：
+
+```bash
+npx skills add ./ --skill banana-proxy
 ```
 
 或者在 Claude Code 中注册插件市场：

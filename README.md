@@ -7,7 +7,13 @@ Local skills marketplace following the `jimliu/baoyu-skills` structure.
 ## Installation
 
 ```bash
-npx skills add ./
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
+```
+
+Local development (current directory):
+
+```bash
+npx skills add ./ --skill banana-proxy
 ```
 
 Or register as a plugin marketplace in Claude Code:
