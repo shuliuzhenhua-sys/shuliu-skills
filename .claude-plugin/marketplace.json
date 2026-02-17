@@ -1,0 +1,21 @@
+{
+  "name": "shuliu-skills",
+  "owner": {
+    "name": "goudan"
+  },
+  "metadata": {
+    "description": "Local skills marketplace for shuliu workflows",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "image-generation-skills",
+      "description": "Image generation backends",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/banana-proxy"
+      ]
+    }
+  ]
+}
