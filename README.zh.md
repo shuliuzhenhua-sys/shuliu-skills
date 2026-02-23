@@ -61,6 +61,7 @@ npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyi
 
 - 支持模式：`main` / `detail` / `both`
 - 详情图为整套图，执行前会先询问用户需要几张
+- 默认比例：主图 `1:1`，详情图 `3:4`
 - 默认调用 `banana-proxy`，失败自动回退 `baoyu-image-gen`
 - 支持中文风格名（如“白底极简主图”“参数规格详情图”）
 

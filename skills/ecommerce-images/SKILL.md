@@ -16,7 +16,8 @@ description: 电商商品图生成工作流技能。接收用户提供的商品�
   - `mainStyle`：主图风格名（推荐）
   - `detailStyle`：详情图风格名（推荐）
   - `detailCount`：详情图张数（当 `mode=detail|both` 时必问，用户未给就先询问）
-  - `ar`、`quality`、`imageSize`、`model`（透传给生图 skill）
+  - `quality`、`imageSize`、`model`（透传给生图 skill）
+  - `ar`（可选覆盖；不传时使用默认比例）
 
 ## 执行顺序
 
@@ -29,6 +30,9 @@ description: 电商商品图生成工作流技能。接收用户提供的商品�
 4. 为每张目标图按风格名组装中文提示词。
 5. 先调用 `banana-proxy` 生成：
    - 使用参考图（`--ref`）
+   - 默认比例：
+     - 主图：`1:1`
+     - 详情图：`3:4`
    - 输出路径建议：
      - 主图：`out/ecommerce-images/<原图名>_main_<风格key>.png`
      - 详情图第 i 张：`out/ecommerce-images/<原图名>_detail_<风格key>_n<i>.png`

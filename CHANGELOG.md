@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.8 - 2026-02-23
+
+### Changes
+- Update default aspect ratios in `ecommerce-images`: main image defaults to `1:1`, detail images default to `3:4`.
+- Allow explicit override through `ar`.
+- Bump `.claude-plugin/marketplace.json` metadata version to `0.2.8`.
+
 ## 0.2.7 - 2026-02-23
 
 ### Changes

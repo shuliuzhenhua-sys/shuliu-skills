@@ -61,6 +61,7 @@ Workflow skill for generating ecommerce product main images and detail images fr
 
 - Supports: `main` / `detail` / `both`
 - Detail images are generated as a set, and the skill asks the user how many detail images are needed before execution
+- Default aspect ratio: main image `1:1`, detail images `3:4`
 - Defaults to `banana-proxy`; falls back to `baoyu-image-gen` on failure
 - Supports human-friendly style names
 
