@@ -1,11 +1,11 @@
 ---
 name: banana-proxy
-description: Gemini image generation via Banana proxy endpoint. Single provider only.
+description: Gemini image generation via Banana proxy endpoint with GeekAI fallback.
 ---
 
 # Banana Proxy Image Generation
 
-仅保留 Banana 代理的 Gemini 生图能力。
+默认走 Banana 代理的 Gemini 生图；当主通道失败时，自动回退到 GeekAI（默认模型 `nano-banana-2`）。
 
 ## Script Directory
 
@@ -63,4 +63,6 @@ JSONL 每行示例：
 ## Fixed Config
 
 - Base URL: `http://zx2.52youxi.cc:3000`
-- API Key: 仅从 `BANANA_PROXY_API_KEY` 读取
+- Primary API Key: `BANANA_PROXY_API_KEY`（必填，主通道）
+- Fallback API Key: `GEEKAI_API_KEY`（建议配置，兜底通道）
+- Fallback model: `GEEKAI_IMAGE_MODEL`（默认 `nano-banana-2`）

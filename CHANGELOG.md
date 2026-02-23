@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.2.2 - 2026-02-23
+
+### Changes
+- Change default GeekAI fallback model from `bananan-2` to `nano-banana-2` for `banana-proxy`.
+- Keep actual output format from provider response (no forced PNG), and save with matched extension.
+
+## 0.2.1 - 2026-02-23
+
+### Features
+- Add GeekAI image fallback provider to `banana-proxy`.
+- Keep Banana Gemini as primary provider and automatically fallback to GeekAI model `bananan-2` when primary generation fails after retry.
+- Add new provider implementation: `skills/banana-proxy/scripts/providers/geekai.ts`.
+
+### Documentation
+- Update `skills/banana-proxy/SKILL.md` to describe primary/fallback behavior and new env vars.
+- Update `README.md` and `README.zh.md` with `GEEKAI_API_KEY` / `GEEKAI_IMAGE_MODEL` usage.
+
 ## 0.2.0 - 2026-02-17
 
 ### Features

@@ -1,5 +1,22 @@
 # 更新日志
 
+## 0.2.2 - 2026-02-23
+
+### 变更
+- 将 `banana-proxy` 的 GeekAI 默认兜底模型从 `bananan-2` 调整为 `nano-banana-2`。
+- 保持返回图片原始格式，不再强制 PNG，并按真实格式保存扩展名。
+
+## 0.2.1 - 2026-02-23
+
+### 新功能
+- 为 `banana-proxy` 增加 GeekAI 图片生成兜底通道。
+- 保持 Banana Gemini 为主通道；当主通道重试后仍失败时，自动回退到 GeekAI 模型 `bananan-2`。
+- 新增 provider 实现文件：`skills/banana-proxy/scripts/providers/geekai.ts`。
+
+### 文档
+- 更新 `skills/banana-proxy/SKILL.md`，补充主/兜底通道行为与新增环境变量说明。
+- 更新 `README.md` 与 `README.zh.md`，补充 `GEEKAI_API_KEY` / `GEEKAI_IMAGE_MODEL` 用法。
+
 ## 0.2.0 - 2026-02-17
 
 ### 新功能
