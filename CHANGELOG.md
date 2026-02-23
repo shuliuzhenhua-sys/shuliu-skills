@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.3 - 2026-02-23
+
+### Changes
+- Change local env directory for `banana-proxy` from `.baoyu-skills/.env` to `.shuliu-skills/.env` (both project and home paths).
+- Update CLI help text to reflect the new env file load order.
+
 ## 0.2.2 - 2026-02-23
 
 ### Changes

@@ -53,7 +53,7 @@ Environment variables:
   GEEKAI_API_KEY            GeekAI fallback API key (used when primary fails)
   GEEKAI_IMAGE_MODEL        GeekAI fallback model (default: nano-banana-2)
 
-Env file load order: CLI args > process.env > <cwd>/.baoyu-skills/.env > ~/.baoyu-skills/.env`);
+Env file load order: CLI args > process.env > <cwd>/.shuliu-skills/.env > ~/.shuliu-skills/.env`);
 }
 
 function parseArgs(argv: string[]): CliArgs {
@@ -211,8 +211,8 @@ async function loadEnv(): Promise<void> {
   const home = homedir();
   const cwd = process.cwd();
 
-  const homeEnv = await loadEnvFile(path.join(home, ".baoyu-skills", ".env"));
-  const cwdEnv = await loadEnvFile(path.join(cwd, ".baoyu-skills", ".env"));
+  const homeEnv = await loadEnvFile(path.join(home, ".shuliu-skills", ".env"));
+  const cwdEnv = await loadEnvFile(path.join(cwd, ".shuliu-skills", ".env"));
 
   for (const [k, v] of Object.entries(homeEnv)) {
     if (!process.env[k]) process.env[k] = v;
