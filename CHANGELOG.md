@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.7 - 2026-02-23
+
+### Changes
+- Update `.gitignore` to ignore local `skills-lock.json` and avoid committing machine-specific lock data.
+- Bump `.claude-plugin/marketplace.json` metadata version to `0.2.7`.
+
 ## 0.2.6 - 2026-02-23
 
 ### Changes
