@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.4 - 2026-02-23
+
+### Changes
+- Remove GeekAI fallback provider from `banana-proxy`; use only lnapi.com (LNAPI_KEY) as primary provider.
+- Delete `skills/banana-proxy/scripts/providers/geekai.ts`.
+- Simplify `generateWithRetry` to retry primary provider only (no fallback).
+
 ## 0.2.3 - 2026-02-23
 
 ### Changes

@@ -31,7 +31,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 
 ### banana-proxy
 
-通过 Banana 代理端点调用 Gemini 生图；当主通道失败时，自动回退到 GeekAI 生图。
+通过 Banana 代理端点调用 Gemini 生图。
 
 ```bash
 npx -y bun skills/banana-proxy/scripts/main.ts --prompt "一只猫" --image out.png
@@ -39,9 +39,7 @@ npx -y bun skills/banana-proxy/scripts/main.ts --prompt "一只猫" --image out.
 
 环境变量：
 
-- `BANANA_PROXY_API_KEY`（必填，主通道）
-- `GEEKAI_API_KEY`（建议配置，兜底通道）
-- `GEEKAI_IMAGE_MODEL`（可选，默认 `nano-banana-2`）
+- `LNAPI_KEY`（必填）
 
 ### douyin-share-info
 

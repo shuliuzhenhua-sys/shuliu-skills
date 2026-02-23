@@ -1,5 +1,12 @@
 # 更新日志
 
+## 0.2.4 - 2026-02-23
+
+### 变更
+- 移除 `banana-proxy` 的 GeekAI 兜底通道；仅使用 lnapi.com（LNAPI_KEY）作为主通道。
+- 删除 `skills/banana-proxy/scripts/providers/geekai.ts`。
+- 简化 `generateWithRetry`，仅对主通道重试（不再兜底）。
+
 ## 0.2.3 - 2026-02-23
 
 ### 变更

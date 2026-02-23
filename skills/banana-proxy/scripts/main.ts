@@ -4,7 +4,6 @@ import { homedir } from "node:os";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import type { CliArgs } from "./types";
 import * as googleProvider from "./providers/google";
-import * as geekaiProvider from "./providers/geekai";
 
 type BatchTaskInput = {
   prompt?: string;
@@ -50,8 +49,6 @@ Options:
 
 Environment variables:
   GOOGLE_IMAGE_MODEL        Default Google model (gemini-3-pro-image-preview)
-  GEEKAI_API_KEY            GeekAI fallback API key (used when primary fails)
-  GEEKAI_IMAGE_MODEL        GeekAI fallback model (default: nano-banana-2)
 
 Env file load order: CLI args > process.env > <cwd>/.shuliu-skills/.env > ~/.shuliu-skills/.env`);
 }
@@ -325,28 +322,18 @@ function buildTaskArgs(baseArgs: CliArgs, task: ResolvedTask): CliArgs {
 }
 
 async function generateWithRetry(prompt: string, model: string, taskArgs: CliArgs): Promise<Uint8Array> {
-  let googleError: unknown = null;
-
+  let lastError: unknown = null;
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       return await googleProvider.generateImage(prompt, model, taskArgs);
     } catch (e) {
-      googleError = e;
+      lastError = e;
       if (attempt < 2) {
-        console.error("Banana proxy generation failed, retrying primary provider...");
+        console.error("Generation failed, retrying...");
       }
     }
   }
-
-  console.error(`Primary provider failed. Falling back to GeekAI ${geekaiProvider.getDefaultModel()}...`);
-
-  try {
-    return await geekaiProvider.generateImage(prompt, taskArgs);
-  } catch (geekaiError) {
-    const primaryMsg = googleError instanceof Error ? googleError.message : String(googleError);
-    const fallbackMsg = geekaiError instanceof Error ? geekaiError.message : String(geekaiError);
-    throw new Error(`Primary provider failed: ${primaryMsg}; GeekAI fallback failed: ${fallbackMsg}`);
-  }
+  throw lastError;
 }
 
 async function loadBatchTasks(batchPath: string): Promise<BatchTaskInput[]> {

@@ -49,7 +49,7 @@ There is no formal test suite yet. Validate behavior with smoke tests:
 
 1. Run one single-image command and confirm output file creation.
 2. Run one batch JSONL command and confirm mixed success/failure handling.
-3. Verify required env var behavior (`BANANA_PROXY_API_KEY` missing should fail clearly).
+3. Verify required env var behavior (`LNAPI_KEY` missing should fail clearly).
 4. Run one Douyin share-url command and confirm normalized JSON fields are present.
 5. Verify required env var behavior (`TIKHUB_API_KEY` missing should fail clearly).
 
@@ -77,7 +77,7 @@ When adding tests later, place them under each skill path (for example `skills/b
 5. Create tag for that commit and push commit + tag.
 
 ## Security & Configuration Tips
-- Never hardcode secrets; use `BANANA_PROXY_API_KEY`.
-- Never hardcode secrets; use `BANANA_PROXY_API_KEY` and `TIKHUB_API_KEY`.
+- Never hardcode secrets; use `LNAPI_KEY`.
+- Never hardcode secrets; use `LNAPI_KEY` and `TIKHUB_API_KEY`.
 - Review `marketplace.json` version and skill paths before release.
 - Keep provider base URL and API behavior changes documented in `SKILL.md` and changelogs.

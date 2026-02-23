@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import type { CliArgs } from "../types";
 
 const GOOGLE_MULTIMODAL_MODELS = ["gemini-3-pro-image-preview", "gemini-3-flash-preview"];
-const HARDCODED_GOOGLE_BASE_URL = "http://zx2.52youxi.cc:3000";
+const HARDCODED_GOOGLE_BASE_URL = "https://lnapi.com";
 
 export function getDefaultModel(): string {
   return process.env.GOOGLE_IMAGE_MODEL || "gemini-3-pro-image-preview";
@@ -19,7 +19,7 @@ function isGoogleMultimodal(model: string): boolean {
 }
 
 function getGoogleApiKey(): string | null {
-  return process.env.BANANA_PROXY_API_KEY || null;
+  return process.env.LNAPI_KEY || null;
 }
 
 function getGoogleImageSize(args: CliArgs): "1K" | "2K" | "4K" {
@@ -46,7 +46,7 @@ function toModelPath(model: string): string {
 
 async function postGoogleJson<T>(pathname: string, body: unknown): Promise<T> {
   const apiKey = getGoogleApiKey();
-  if (!apiKey) throw new Error("BANANA_PROXY_API_KEY is required");
+  if (!apiKey) throw new Error("LNAPI_KEY is required");
 
   const res = await fetch(buildGoogleUrl(pathname), {
     method: "POST",

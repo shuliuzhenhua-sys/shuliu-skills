@@ -31,7 +31,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 
 ### banana-proxy
 
-Gemini image generation via Banana proxy endpoint, with GeekAI fallback when primary generation fails.
+Gemini image generation via Banana proxy endpoint.
 
 ```bash
 npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.png
@@ -39,9 +39,7 @@ npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.png
 
 Environment variable:
 
-- `BANANA_PROXY_API_KEY` (required, primary provider)
-- `GEEKAI_API_KEY` (optional but recommended, fallback provider)
-- `GEEKAI_IMAGE_MODEL` (optional, default: `nano-banana-2`)
+- `LNAPI_KEY` (required)
 
 ### douyin-share-info
 
