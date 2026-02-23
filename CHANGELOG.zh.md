@@ -1,5 +1,23 @@
 # 更新日志
 
+## 0.2.6 - 2026-02-23
+
+### 变更
+- 将 `ecommerce-images` 重构为无脚本的工作流技能（删除 `skills/ecommerce-images/scripts/main.ts`）。
+- 为 `ecommerce-images` 固定 provider 策略：默认 `banana-proxy`，失败自动回退 `baoyu-image-gen`。
+- 保留 `main` / `detail` / `both` 生成模式与风格编号扩展位。
+- 将详情图规则调整为“整套生成”，在 `mode=detail|both` 时先询问用户需要的详情图张数。
+- 优化风格交互为“仅中文风格名”（如白底极简/参数规格）。
+
+### 文档
+- 更新 `AGENTS.md`，同步 `ecommerce-images` 无脚本结构说明。
+- 更新 `README.md` 与 `README.zh.md`，补充 `ecommerce-images` 安装与使用说明。
+
+## 0.2.5 - 2026-02-23
+
+### 新功能
+- 新增 `ecommerce-images` skill：基于固定提示词模板与 `banana-proxy` 生成电商商品主图与详情图。
+
 ## 0.2.4 - 2026-02-23
 
 ### 变更

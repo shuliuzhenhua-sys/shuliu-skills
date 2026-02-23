@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Local skills marketplace for shuliu workflows",
-    "version": "0.2.0"
+    "version": "0.2.6"
   },
   "plugins": [
     {
@@ -14,7 +14,8 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/banana-proxy"
+        "./skills/banana-proxy",
+        "./skills/ecommerce-images"
       ]
     },
     {

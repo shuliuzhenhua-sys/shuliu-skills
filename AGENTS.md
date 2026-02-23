@@ -3,6 +3,7 @@
 ## Project Structure & Module Organization
 This repository is a Claude Code skills marketplace currently focused on:
 - `banana-proxy`: Gemini image generation via Banana proxy.
+- `ecommerce-images`: Workflow skill to generate ecommerce product main/detail images by orchestrating existing image generation skills.
 - `douyin-share-info`: Fetch Douyin basic info from share URLs via TikHub Web API.
 
 - `.claude-plugin/marketplace.json`: marketplace metadata, plugin groups, and skill registration.
@@ -10,6 +11,7 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/banana-proxy/scripts/main.ts`: CLI entrypoint for prompt parsing, env loading, single/batch generation.
 - `skills/banana-proxy/scripts/providers/google.ts`: Banana proxy Gemini provider implementation.
 - `skills/banana-proxy/scripts/types.ts`: shared TypeScript types.
+- `skills/ecommerce-images/SKILL.md`: user-facing skill contract and usage docs for ecommerce images.
 - `skills/douyin-share-info/SKILL.md`: user-facing skill contract and extraction rules for Douyin share parsing.
 - `skills/douyin-share-info/scripts/main.ts`: CLI entrypoint for TikHub API calls and normalized output.
 - `README.md` / `README.zh.md`: install and update instructions.
@@ -20,6 +22,7 @@ No build step is required; scripts run directly with Bun.
 
 - Install skill from GitHub:
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy`
+  - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info`
 - Run local generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.png`

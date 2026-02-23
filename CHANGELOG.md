@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.2.6 - 2026-02-23
+
+### Changes
+- Refactor `ecommerce-images` into a no-code workflow skill (remove `skills/ecommerce-images/scripts/main.ts`).
+- Set provider strategy for `ecommerce-images` to use `banana-proxy` by default and fallback to `baoyu-image-gen` on failure.
+- Keep `main` / `detail` / `both` generation modes and style ID extension slots in workflow docs.
+- Update detail-image behavior to set generation: ask users for required detail image count before running in `detail`/`both` modes.
+- Switch style interaction to human-readable style names only.
+
+### Documentation
+- Update `AGENTS.md` to align with no-script `ecommerce-images` structure.
+- Update `README.md` and `README.zh.md` to include `ecommerce-images` installation and usage guidance.
+
+## 0.2.5 - 2026-02-23
+
+### Features
+- Add new skill `ecommerce-images` for generating ecommerce product main and detail images using prompt templates and `banana-proxy`.
+
 ## 0.2.4 - 2026-02-23
 
 ### Changes
