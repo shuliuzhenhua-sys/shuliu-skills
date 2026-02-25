@@ -1,5 +1,15 @@
 # 更新日志
 
+## 0.2.9 - 2026-02-25
+
+### 新功能
+- 新增 `sora-video` skill：通过 lnapi.com 调用 Sora 生成视频。
+- 支持文生视频与图生视频。
+- 支持自动轮询任务状态并下载视频。
+
+### 文档
+- 在 `.claude-plugin/marketplace.json` 中注册 `sora-video`（插件分组 `video-generation-skills`）。
+
 ## 0.2.8 - 2026-02-23
 
 ### 变更

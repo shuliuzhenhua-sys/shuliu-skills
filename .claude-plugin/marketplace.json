@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Local skills marketplace for shuliu workflows",
-    "version": "0.2.8"
+    "version": "0.2.9"
   },
   "plugins": [
     {
@@ -16,6 +16,15 @@
       "skills": [
         "./skills/banana-proxy",
         "./skills/ecommerce-images"
+      ]
+    },
+    {
+      "name": "video-generation-skills",
+      "description": "Video generation backends",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/sora-video"
       ]
     },
     {

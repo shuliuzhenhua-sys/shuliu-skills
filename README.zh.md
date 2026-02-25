@@ -9,6 +9,7 @@
 ```bash
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 ```
 
@@ -19,6 +20,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 ```bash
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 ```
 
@@ -27,6 +29,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 | 插件 | 说明 | 包含技能 |
 |------|------|----------|
 | **image-generation-skills** | 图片生成后端 | [banana-proxy](#banana-proxy)、[ecommerce-images](#ecommerce-images) |
+| **video-generation-skills** | 视频生成后端 | [sora-video](#sora-video) |
 | **douyin-tools** | 抖音分享链接解析工具 | [douyin-share-info](#douyin-share-info) |
 
 ## 可用技能
@@ -37,6 +40,18 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 
 ```bash
 npx -y bun skills/banana-proxy/scripts/main.ts --prompt "一只猫" --image out.png
+```
+
+环境变量：
+
+- `LNAPI_KEY`（必填）
+
+### sora-video
+
+通过 lnapi.com 调用 Sora 生成视频。
+
+```bash
+npx -y bun skills/sora-video/scripts/main.ts --prompt "一只奔跑的狗" --output video.mp4
 ```
 
 环境变量：

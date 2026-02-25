@@ -4,6 +4,7 @@
 This repository is a Claude Code skills marketplace currently focused on:
 - `banana-proxy`: Gemini image generation via Banana proxy.
 - `ecommerce-images`: Workflow skill to generate ecommerce product main/detail images by orchestrating existing image generation skills.
+- `sora-video`: Sora video generation via lnapi.com.
 - `douyin-share-info`: Fetch Douyin basic info from share URLs via TikHub Web API.
 
 - `.claude-plugin/marketplace.json`: marketplace metadata, plugin groups, and skill registration.
@@ -12,6 +13,9 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/banana-proxy/scripts/providers/google.ts`: Banana proxy Gemini provider implementation.
 - `skills/banana-proxy/scripts/types.ts`: shared TypeScript types.
 - `skills/ecommerce-images/SKILL.md`: user-facing skill contract and usage docs for ecommerce images.
+- `skills/sora-video/SKILL.md`: user-facing skill contract.
+- `skills/sora-video/scripts/main.ts`: CLI entrypoint.
+- `skills/sora-video/scripts/providers/lnapi.ts`: Lnapi.com provider implementation.
 - `skills/douyin-share-info/SKILL.md`: user-facing skill contract and extraction rules for Douyin share parsing.
 - `skills/douyin-share-info/scripts/main.ts`: CLI entrypoint for TikHub API calls and normalized output.
 - `README.md` / `README.zh.md`: install and update instructions.
@@ -23,9 +27,12 @@ No build step is required; scripts run directly with Bun.
 - Install skill from GitHub:
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images`
+  - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info`
 - Run local generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.png`
+- Run local video generation:
+  - `npx -y bun skills/sora-video/scripts/main.ts --prompt "A running dog" --output video.mp4`
 - Run local Douyin share parsing:
   - `npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyin.com/xxxx/" --json`
 - Batch generation:

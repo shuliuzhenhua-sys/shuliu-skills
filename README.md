@@ -9,6 +9,7 @@ Local skills marketplace following the `jimliu/baoyu-skills` structure.
 ```bash
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 ```
 
@@ -19,6 +20,7 @@ When the skill is updated in this repository, reinstall the latest version:
 ```bash
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 ```
 
@@ -27,6 +29,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 | Plugin | Description | Skills |
 |--------|-------------|--------|
 | **image-generation-skills** | Image generation backends | [banana-proxy](#banana-proxy), [ecommerce-images](#ecommerce-images) |
+| **video-generation-skills** | Video generation backends | [sora-video](#sora-video) |
 | **douyin-tools** | Douyin share URL parsing | [douyin-share-info](#douyin-share-info) |
 
 ## Available Skills
@@ -37,6 +40,18 @@ Gemini image generation via Banana proxy endpoint.
 
 ```bash
 npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.png
+```
+
+Environment variable:
+
+- `LNAPI_KEY` (required)
+
+### sora-video
+
+Sora video generation via lnapi.com.
+
+```bash
+npx -y bun skills/sora-video/scripts/main.ts --prompt "A video prompt" --output video.mp4
 ```
 
 Environment variable:

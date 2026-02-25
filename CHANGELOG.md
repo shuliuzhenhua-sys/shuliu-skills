@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.9 - 2026-02-25
+
+### Features
+- Add new skill `sora-video` for generating videos using Sora via lnapi.com.
+- Supports text-to-video and image-to-video generation.
+- Supports polling for video completion and automatic download.
+
+### Documentation
+- Register `sora-video` in `.claude-plugin/marketplace.json` under new plugin `video-generation-skills`.
+
 ## 0.2.8 - 2026-02-23
 
 ### Changes
