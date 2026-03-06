@@ -3,6 +3,7 @@
 ## Project Structure & Module Organization
 This repository is a Claude Code skills marketplace currently focused on:
 - `banana-proxy`: Gemini image generation via Banana proxy.
+- `geek-image`: GeekAI image generation via geekai.co.
 - `ecommerce-images`: Workflow skill to generate ecommerce product main/detail images by orchestrating existing image generation skills.
 - `sora-video`: Sora video generation via lnapi.com.
 - `douyin-share-info`: Fetch Douyin basic info from share URLs via TikHub Web API.
@@ -12,6 +13,10 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/banana-proxy/scripts/main.ts`: CLI entrypoint for prompt parsing, env loading, single/batch generation.
 - `skills/banana-proxy/scripts/providers/google.ts`: Banana proxy Gemini provider implementation.
 - `skills/banana-proxy/scripts/types.ts`: shared TypeScript types.
+- `skills/geek-image/SKILL.md`: user-facing skill contract and usage docs.
+- `skills/geek-image/scripts/main.ts`: CLI entrypoint for GeekAI image generation.
+- `skills/geek-image/scripts/providers/geekai.ts`: GeekAI provider implementation.
+- `skills/geek-image/scripts/types.ts`: shared TypeScript types.
 - `skills/ecommerce-images/SKILL.md`: user-facing skill contract and usage docs for ecommerce images.
 - `skills/sora-video/SKILL.md`: user-facing skill contract.
 - `skills/sora-video/scripts/main.ts`: CLI entrypoint.
@@ -26,11 +31,13 @@ No build step is required; scripts run directly with Bun.
 
 - Install skill from GitHub:
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy`
+  - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-image`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info`
 - Run local generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.png`
+  - `npx -y bun skills/geek-image/scripts/main.ts --prompt "A cat" --image out.png`
 - Run local video generation:
   - `npx -y bun skills/sora-video/scripts/main.ts --prompt "A running dog" --output video.mp4`
 - Run local Douyin share parsing:
@@ -58,10 +65,11 @@ No build step is required; scripts run directly with Bun.
 There is no formal test suite yet. Validate behavior with smoke tests:
 
 1. Run one single-image command and confirm output file creation.
-2. Run one batch JSONL command and confirm mixed success/failure handling.
-3. Verify required env var behavior (`LNAPI_KEY` missing should fail clearly).
-4. Run one Douyin share-url command and confirm normalized JSON fields are present.
-5. Verify required env var behavior (`TIKHUB_API_KEY` missing should fail clearly).
+2. Run one GeekAI single-image command and confirm output file creation.
+3. Run one batch JSONL command and confirm mixed success/failure handling.
+4. Verify required env var behavior (`LNAPI_KEY` and `GEEKAI_API_KEY` missing should fail clearly).
+5. Run one Douyin share-url command and confirm normalized JSON fields are present.
+6. Verify required env var behavior (`TIKHUB_API_KEY` missing should fail clearly).
 
 When adding tests later, place them under each skill path (for example `skills/banana-proxy/tests/` or `skills/douyin-share-info/tests/`) and name files `*.test.ts`.
 
@@ -88,6 +96,6 @@ When adding tests later, place them under each skill path (for example `skills/b
 
 ## Security & Configuration Tips
 - Never hardcode secrets; use `LNAPI_KEY`.
-- Never hardcode secrets; use `LNAPI_KEY` and `TIKHUB_API_KEY`.
+- Never hardcode secrets; use `LNAPI_KEY`, `GEEKAI_API_KEY`, and `TIKHUB_API_KEY`.
 - Review `marketplace.json` version and skill paths before release.
 - Keep provider base URL and API behavior changes documented in `SKILL.md` and changelogs.

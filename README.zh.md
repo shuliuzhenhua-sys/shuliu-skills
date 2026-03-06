@@ -8,6 +8,7 @@
 
 ```bash
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-image
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
@@ -19,6 +20,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 
 ```bash
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-image
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
@@ -28,7 +30,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 
 | 插件 | 说明 | 包含技能 |
 |------|------|----------|
-| **image-generation-skills** | 图片生成后端 | [banana-proxy](#banana-proxy)、[ecommerce-images](#ecommerce-images) |
+| **image-generation-skills** | 图片生成后端 | [banana-proxy](#banana-proxy)、[geek-image](#geek-image)、[ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | 视频生成后端 | [sora-video](#sora-video) |
 | **douyin-tools** | 抖音分享链接解析工具 | [douyin-share-info](#douyin-share-info) |
 
@@ -45,6 +47,19 @@ npx -y bun skills/banana-proxy/scripts/main.ts --prompt "一只猫" --image out.
 环境变量：
 
 - `LNAPI_KEY`（必填）
+
+### geek-image
+
+通过 geekai.co 调用 GeekAI 图像接口生图。
+
+```bash
+npx -y bun skills/geek-image/scripts/main.ts --prompt "一只猫" --image out.png
+```
+
+环境变量：
+
+- `GEEKAI_API_KEY`（必填）
+- `GEEK_IMAGE_MODEL`（可选，默认 `nano-banana-2`）
 
 ### sora-video
 
