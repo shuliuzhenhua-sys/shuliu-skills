@@ -20,13 +20,13 @@ description: Gemini image generation via Banana proxy endpoint.
 
 ```bash
 # 基础生图
-npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "A cat" --image out.png
+npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "A cat" --image out.jpg
 
 # 指定比例与质量
-npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "portrait" --image out.png --ar 3:4 --quality 2k
+npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "portrait" --image out.jpg --ar 3:4 --quality 2k
 
 # 使用参考图
-npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "replace subject" --ref a.png b.png --image out.png
+npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "replace subject" --ref a.png b.png --image out.jpg
 
 # 批量并行生图（JSONL）
 npx -y bun ${SKILL_DIR}/scripts/main.ts --batch jobs.jsonl --concurrency 4
@@ -39,7 +39,7 @@ npx -y bun ${SKILL_DIR}/scripts/main.ts --batch jobs.jsonl --concurrency 4
 - `--image <path>`: 输出路径（必填）
 - `--batch <file>`: 批量任务文件（`.json` 数组或 `.jsonl` 每行一个 JSON）
 - `--concurrency <n>`: 并行数（仅 `--batch` 模式生效，默认 `4`）
-- `--model <id>`, `-m`: 模型（默认 `gemini-3-pro-image-preview`）
+- `--model <id>`, `-m`: 模型（默认 `gemini-3-pro-image-preview`，常用：`gemini-3-pro-image-preview`、`gemini-3.1-flash-image-preview`）
 - `--ar <ratio>`: 比例，如 `1:1`、`3:4`、`16:9`
 - `--quality normal|2k`: 质量（默认 `2k`）
 - `--imageSize 1K|2K|4K`: 生成尺寸等级
@@ -51,8 +51,8 @@ npx -y bun ${SKILL_DIR}/scripts/main.ts --batch jobs.jsonl --concurrency 4
 JSONL 每行示例：
 
 ```json
-{"prompt":"A cat in watercolor style","image":"out/cat.png","ar":"1:1"}
-{"prompt":"A cyberpunk city at night","image":"out/city.png","quality":"2k","imageSize":"2K"}
+{"prompt":"A cat in watercolor style","image":"out/cat.jpg","ar":"1:1"}
+{"prompt":"A cyberpunk city at night","image":"out/city.jpg","quality":"2k","imageSize":"2K"}
 ```
 
 字段说明：

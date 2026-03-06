@@ -36,7 +36,7 @@ No build step is required; scripts run directly with Bun.
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info`
 - Run local generation:
-  - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.png`
+  - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.jpg`
   - `npx -y bun skills/geek-image/scripts/main.ts --prompt "A cat" --image out.png`
 - Run local video generation:
   - `npx -y bun skills/sora-video/scripts/main.ts --prompt "A running dog" --output video.mp4`

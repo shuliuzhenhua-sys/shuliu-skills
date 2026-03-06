@@ -41,7 +41,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 通过 Banana 代理端点调用 Gemini 生图。
 
 ```bash
-npx -y bun skills/banana-proxy/scripts/main.ts --prompt "一只猫" --image out.png
+npx -y bun skills/banana-proxy/scripts/main.ts --prompt "一只猫" --image out.jpg
 ```
 
 环境变量：

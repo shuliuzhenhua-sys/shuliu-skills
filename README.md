@@ -41,7 +41,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 Gemini image generation via Banana proxy endpoint.
 
 ```bash
-npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.png
+npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.jpg
 ```
 
 Environment variable:
