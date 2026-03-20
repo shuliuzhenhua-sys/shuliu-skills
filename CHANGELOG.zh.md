@@ -1,5 +1,15 @@
 # 更新日志
 
+## 0.2.13 - 2026-03-20
+
+### 新功能
+- 新增 `feishu-approval` 文档型 skill：覆盖飞书原生审批定义、表单控件、外部选项、审批实例与排障说明。
+- 在 `feishu-tools` 插件分组中注册 `./skills/feishu-approval`，并将 marketplace 元数据版本升级到 `0.2.13`。
+
+### 文档
+- 更新 `README.md` 与 `README.zh.md`，补充 `feishu-approval` 的安装与使用说明。
+- 更新 `AGENTS.md`，同步新技能路径与仓库约定。
+
 ## 0.2.12 - 2026-03-20
 
 ### 新功能

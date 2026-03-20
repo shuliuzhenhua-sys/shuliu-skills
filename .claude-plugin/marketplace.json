@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Local skills marketplace for shuliu workflows",
-    "version": "0.2.12"
+    "version": "0.2.13"
   },
   "plugins": [
     {
@@ -39,12 +39,13 @@
     },
     {
       "name": "feishu-tools",
-      "description": "飞书授权、多维表格与 token 复用工具",
+      "description": "飞书授权、原生审批、多维表格与 token 复用工具",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/feishu-user-auth",
-        "./skills/feishu-bitable"
+        "./skills/feishu-bitable",
+        "./skills/feishu-approval"
       ]
     }
   ]

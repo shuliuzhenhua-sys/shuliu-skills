@@ -9,6 +9,7 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `douyin-share-info`: Fetch Douyin basic info from share URLs via TikHub Web API.
 - `feishu-user-auth`: Feishu user OAuth/device-flow authorization, scope top-up, and token reuse.
 - `feishu-bitable`: Feishu Bitable operations for records, fields, views, permissions, formulas, and links.
+- `feishu-approval`: Feishu native approval documentation skill covering approval definitions, form controls, external options, approval instances, and troubleshooting.
 
 - `.claude-plugin/marketplace.json`: marketplace metadata, plugin groups, and skill registration.
 - `skills/banana-proxy/SKILL.md`: user-facing skill contract and usage docs.
@@ -31,6 +32,8 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/feishu-user-auth/config.json`: local skill config template (`appId`, `appSecret`, `brand`).
 - `skills/feishu-bitable/SKILL.md`: user-facing skill contract for Feishu Bitable workflows.
 - `skills/feishu-bitable/references/fields.md`: field type and `property` reference guide for Bitable field operations.
+- `skills/feishu-approval/SKILL.md`: user-facing skill contract for Feishu native approval workflows.
+- `skills/feishu-approval/references/*.md`: approval definition, form control, external option, instance, and troubleshooting references.
 - `README.md` / `README.zh.md`: install and update instructions.
 - `CHANGELOG.md` / `CHANGELOG.zh.md`: release notes.
 
@@ -45,6 +48,7 @@ No build step is required; scripts run directly with Bun.
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable`
+  - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval`
 - Run local generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.jpg`
   - `npx -y bun skills/geek-image/scripts/main.ts --prompt "A cat" --image out.png`

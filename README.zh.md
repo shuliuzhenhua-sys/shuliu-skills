@@ -14,6 +14,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-v
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
 ```
 
 ## 更新技能
@@ -28,6 +29,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-v
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
 ```
 
 ## 可用插件
@@ -37,7 +39,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 | **image-generation-skills** | 图片生成后端 | [banana-proxy](#banana-proxy)、[geek-image](#geek-image)、[ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | 视频生成后端 | [sora-video](#sora-video) |
 | **douyin-tools** | 抖音分享链接解析工具 | [douyin-share-info](#douyin-share-info) |
-| **feishu-tools** | 飞书授权、token 复用与多维表格工具 | [feishu-user-auth](#feishu-user-auth)、[feishu-bitable](#feishu-bitable) |
+| **feishu-tools** | 飞书授权、原生审批、token 复用与多维表格工具 | [feishu-user-auth](#feishu-user-auth)、[feishu-bitable](#feishu-bitable)、[feishu-approval](#feishu-approval) |
 
 ## 可用技能
 
@@ -128,3 +130,14 @@ node skills/feishu-user-auth/scripts/run-auth.js system-token
   - “往这张表批量插入 20 条记录”
   - “新增一个货币字段和一个关联字段”
 - 主说明保留在 `SKILL.md`；只有当任务涉及 `type / ui_type / property` 判断时，才进一步读取 `references/fields.md`。
+
+### feishu-approval
+
+用于飞书原生审批的文档型 skill，覆盖审批定义、表单控件、外部选项、审批实例和排障。
+
+- 以自然语言触发即可，例如：
+  - “飞书审批定义的 form_content 怎么写”
+  - “帮我写一个 radioV2 外部选项控件”
+  - “创建审批实例时 dateInterval 要怎么传”
+  - “approval code not found 是什么问题”
+- 这个 skill 不自带脚本，重点是把官方审批文档按定义、控件、实例、排障分层整理，方便直接回答和拼接 JSON。

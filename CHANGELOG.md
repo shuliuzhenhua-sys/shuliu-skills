@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.13 - 2026-03-20
+
+### Features
+- Add new documentation-first skill `feishu-approval` for Feishu native approval definitions, form controls, external options, approval instances, and troubleshooting.
+- Register `./skills/feishu-approval` in the `feishu-tools` plugin group and bump marketplace metadata version to `0.2.13`.
+
+### Documentation
+- Update `README.md` and `README.zh.md` with install and usage guidance for `feishu-approval`.
+- Update `AGENTS.md` to include the new skill paths and repository conventions.
+
 ## 0.2.12 - 2026-03-20
 
 ### Features

@@ -14,6 +14,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-v
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
 ```
 
 ## Update Skill
@@ -28,6 +29,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-v
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
 ```
 
 ## Available Plugins
@@ -37,7 +39,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 | **image-generation-skills** | Image generation backends | [banana-proxy](#banana-proxy), [geek-image](#geek-image), [ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | Video generation backends | [sora-video](#sora-video) |
 | **douyin-tools** | Douyin share URL parsing | [douyin-share-info](#douyin-share-info) |
-| **feishu-tools** | Feishu auth, token reuse, and Bitable operations | [feishu-user-auth](#feishu-user-auth), [feishu-bitable](#feishu-bitable) |
+| **feishu-tools** | Feishu auth, native approval, token reuse, and Bitable operations | [feishu-user-auth](#feishu-user-auth), [feishu-bitable](#feishu-bitable), [feishu-approval](#feishu-approval) |
 
 ## Available Skills
 
@@ -128,3 +130,14 @@ Feishu Bitable workflow skill for records CRUD, field management, views, permiss
   - "Insert 20 records into this table"
   - "Add a currency field and a linked-record field"
 - The skill keeps core guidance in `SKILL.md` and only reads `references/fields.md` when the task needs `type / ui_type / property` decisions.
+
+### feishu-approval
+
+Documentation-first skill for Feishu native approvals, covering approval definitions, form controls, external options, approval instances, and troubleshooting.
+
+- Trigger it with natural language, for example:
+  - "How should form_content be written for a Feishu approval definition?"
+  - "Help me write a radioV2 control backed by external options"
+  - "How do I pass dateInterval when creating an approval instance?"
+  - "What does approval code not found mean?"
+- This skill intentionally ships without scripts and focuses on turning official approval docs into precise field explanations and ready-to-use JSON fragments.
