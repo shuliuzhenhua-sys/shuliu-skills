@@ -13,6 +13,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecomme
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 ```
 
 ## Update Skill
@@ -26,6 +27,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecomme
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 ```
 
 ## Available Plugins
@@ -35,7 +37,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 | **image-generation-skills** | Image generation backends | [banana-proxy](#banana-proxy), [geek-image](#geek-image), [ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | Video generation backends | [sora-video](#sora-video) |
 | **douyin-tools** | Douyin share URL parsing | [douyin-share-info](#douyin-share-info) |
-| **feishu-tools** | Feishu auth and token reuse | [feishu-user-auth](#feishu-user-auth) |
+| **feishu-tools** | Feishu auth, token reuse, and Bitable operations | [feishu-user-auth](#feishu-user-auth), [feishu-bitable](#feishu-bitable) |
 
 ## Available Skills
 
@@ -116,3 +118,13 @@ node skills/feishu-user-auth/scripts/run-auth.js system-token
 Local config file:
 
 - `skills/feishu-user-auth/config.json` (`appId` / `appSecret` required)
+
+### feishu-bitable
+
+Feishu Bitable workflow skill for records CRUD, field management, views, permissions, formulas, and linked tables.
+
+- Use in natural language, for example:
+  - "Create a new Bitable base and add me as a collaborator"
+  - "Insert 20 records into this table"
+  - "Add a currency field and a linked-record field"
+- The skill keeps core guidance in `SKILL.md` and only reads `references/fields.md` when the task needs `type / ui_type / property` decisions.

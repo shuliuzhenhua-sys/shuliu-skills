@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.12 - 2026-03-20
+
+### Features
+- Add new skill `feishu-bitable` for Feishu Bitable record CRUD, field management, views, permissions, formulas, and linked-table workflows.
+- Add field reference guide under `skills/feishu-bitable/references/fields.md` for `type / ui_type / property` decisions.
+- Register `./skills/feishu-bitable` in the `feishu-tools` plugin group and bump marketplace metadata version to `0.2.12`.
+
+### Documentation
+- Update `README.md` and `README.zh.md` with install and usage guidance for `feishu-bitable`.
+- Update `AGENTS.md` to include the new skill paths and repository conventions.
+
 ## 0.2.11 - 2026-03-20
 
 ### Features

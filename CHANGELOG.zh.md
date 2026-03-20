@@ -1,5 +1,16 @@
 # 更新日志
 
+## 0.2.12 - 2026-03-20
+
+### 新功能
+- 新增 `feishu-bitable` skill：用于飞书多维表格的记录 CRUD、字段管理、视图、权限、公式和关联表工作流。
+- 新增字段参考文档 `skills/feishu-bitable/references/fields.md`，用于 `type / ui_type / property` 判断。
+- 在 `feishu-tools` 插件分组中注册 `./skills/feishu-bitable`，并将 marketplace 元数据版本升级到 `0.2.12`。
+
+### 文档
+- 更新 `README.md` 与 `README.zh.md`，补充 `feishu-bitable` 的安装与使用说明。
+- 更新 `AGENTS.md`，同步新技能路径与仓库约定。
+
 ## 0.2.11 - 2026-03-20
 
 ### 新功能

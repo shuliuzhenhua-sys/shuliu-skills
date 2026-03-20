@@ -8,6 +8,7 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `sora-video`: Sora video generation via lnapi.com.
 - `douyin-share-info`: Fetch Douyin basic info from share URLs via TikHub Web API.
 - `feishu-user-auth`: Feishu user OAuth/device-flow authorization, scope top-up, and token reuse.
+- `feishu-bitable`: Feishu Bitable operations for records, fields, views, permissions, formulas, and links.
 
 - `.claude-plugin/marketplace.json`: marketplace metadata, plugin groups, and skill registration.
 - `skills/banana-proxy/SKILL.md`: user-facing skill contract and usage docs.
@@ -28,6 +29,8 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/feishu-user-auth/scripts/run-auth.js`: CLI entrypoint for auth/system-token/refresh/show/remove flows.
 - `skills/feishu-user-auth/scripts/src/*.js`: OAuth, token store, and scope resolution implementation.
 - `skills/feishu-user-auth/config.json`: local skill config template (`appId`, `appSecret`, `brand`).
+- `skills/feishu-bitable/SKILL.md`: user-facing skill contract for Feishu Bitable workflows.
+- `skills/feishu-bitable/references/fields.md`: field type and `property` reference guide for Bitable field operations.
 - `README.md` / `README.zh.md`: install and update instructions.
 - `CHANGELOG.md` / `CHANGELOG.zh.md`: release notes.
 
@@ -41,6 +44,7 @@ No build step is required; scripts run directly with Bun.
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth`
+  - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable`
 - Run local generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.jpg`
   - `npx -y bun skills/geek-image/scripts/main.ts --prompt "A cat" --image out.png`
