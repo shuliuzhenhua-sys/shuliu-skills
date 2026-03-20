@@ -57,9 +57,11 @@ No build step is required; scripts run directly with Bun.
 - Run local Douyin share parsing:
   - `npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyin.com/xxxx/" --json`
 - Run local Feishu user auth flow:
-  - `node skills/feishu-user-auth/scripts/run-auth.js auth`
-  - `node skills/feishu-user-auth/scripts/run-auth.js system-token`
-  - `node skills/feishu-user-auth/scripts/run-auth.js show-token`
+  - Installed skill usage in a project: `./.agents/skills/feishu-user-auth/bin/feishu-auth.js auth`
+  - Installed skill usage after `-g`: `~/.agents/skills/feishu-user-auth/bin/feishu-auth.js auth`
+  - Repo-local debugging from repository root: `node skills/feishu-user-auth/scripts/run-auth.js auth`
+  - Repo-local debugging from repository root: `node skills/feishu-user-auth/scripts/run-auth.js system-token`
+  - Repo-local debugging from repository root: `node skills/feishu-user-auth/scripts/run-auth.js show-token`
 - Batch generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --batch jobs.jsonl --concurrency 4`
 - Validate tracked changes before commit:

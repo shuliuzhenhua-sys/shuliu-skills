@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.14 - 2026-03-20
+
+### Changes
+- Fix `feishu-user-auth` config path resolution so `storeDir` and `legacyStoreDir` support `~/...` home-directory paths.
+- Remove the repo-specific `storeDir` override from `skills/feishu-user-auth/config.json` so distributed installs default to `~/.feishu-auth`.
+- Bump `.claude-plugin/marketplace.json` metadata version to `0.2.14`.
+
+### Documentation
+- Update `skills/feishu-user-auth/SKILL.md` to describe user-home defaults instead of a repository-relative storage path.
+- Update `README.md`, `README.zh.md`, `AGENTS.md`, and `skills/feishu-user-auth/SKILL.md` to document the actual installed bin paths (`.agents/skills/.../bin/feishu-auth.js`) for both project-local and global installs, plus an optional PATH symlink flow.
+
 ## 0.2.13 - 2026-03-20
 
 ### Features

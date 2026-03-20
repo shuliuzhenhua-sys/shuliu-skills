@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { tmpdir } from "node:os";
+import { homedir, tmpdir } from "node:os";
 
 import {
   getRuntimeConfig,
@@ -49,7 +49,7 @@ test("loadSkillConfig reads config from skill file instead of FEISHU_* env", asy
   }
 });
 
-test("loadSkillConfig supports ~/.feishu-auth snake_case config format", async () => {
+test("loadSkillConfig supports snake_case config format", async () => {
   const skillDir = await mkdtemp(join(tmpdir(), "feishu-skill-"));
 
   try {
@@ -71,6 +71,33 @@ test("loadSkillConfig supports ~/.feishu-auth snake_case config format", async (
     assert.equal(config.appId, "snake_app");
     assert.equal(config.appSecret, "snake_secret");
     assert.equal(config.brand, "lark");
+  } finally {
+    await rm(skillDir, { recursive: true, force: true });
+  }
+});
+
+test("loadSkillConfig expands ~/ paths for storeDir and legacyStoreDir", async () => {
+  const skillDir = await mkdtemp(join(tmpdir(), "feishu-skill-"));
+
+  try {
+    await writeFile(
+      join(skillDir, "config.json"),
+      JSON.stringify(
+        {
+          appId: "file_app",
+          appSecret: "file_secret",
+          storeDir: "~/.feishu-auth",
+          legacyStoreDir: "~/legacy-feishu-auth",
+        },
+        null,
+        2,
+      ),
+      "utf8",
+    );
+
+    const config = await loadSkillConfig({ skillDir });
+    assert.equal(config.storeDir, join(homedir(), ".feishu-auth"));
+    assert.equal(config.legacyStoreDir, join(homedir(), "legacy-feishu-auth"));
   } finally {
     await rm(skillDir, { recursive: true, force: true });
   }

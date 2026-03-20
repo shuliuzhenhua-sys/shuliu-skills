@@ -1,6 +1,6 @@
 ---
 name: feishu-user-auth
-description: 管理飞书用户授权与 token 复用。只要用户提到“飞书授权”“OAuth”“Device Flow”“open_id”“重复弹授权窗”“复用 token”“补授权 scope”“飞书 token 存哪儿了”这类场景，就应使用这个 skill。它会优先复用已有用户 token，只对缺失 scopes 补授权，并把 token 固定保存到 `~/.feishu-auth`，避免不同项目各自乱存。
+description: Use when 用户提到“飞书授权”“OAuth”“Device Flow”“open_id”“重复弹授权窗”“复用 token”“补授权 scope”“飞书 token 存哪儿了”这类场景，需要复用本地已有用户 token、只补缺失 scopes，或排查 token 的实际存储位置。
 ---
 
 # Feishu User Auth
@@ -22,31 +22,41 @@ description: 管理飞书用户授权与 token 复用。只要用户提到“飞
 
 ## 存储位置
 
-本 skill 会把 token 固定存到用户目录：
+默认情况下，本 skill 会把 token 存到用户目录下：
 
 - `~/.feishu-auth/tokens/<appId>.json`
 
-旧版如果还把 token 放在 skill 自己的目录下：
+如果你在 `config.json` 里显式配置了 `storeDir`，就会改为：
 
-- `state/tokens/<appId>.json`
+- `<storeDir>/tokens/<appId>.json`
+
+`storeDir` 支持绝对路径，也支持写成 `~/.feishu-auth` 这种用户目录路径。
+
+旧版如果还把 token 放在 legacy 目录下，脚本会从这两种位置尝试迁移：
+
+- `<legacyStoreDir>/tokens/<appId>.json`
+- `<legacyStoreDir>/<appId>__<openId>.json`
 
 脚本会默认把这个旧目录当作迁移来源，在新目录为空时自动尝试迁移。
 
 ## 前置配置
 
-先维护 skill 自己的配置文件：
+先找到安装后的 skill 目录，再维护其中的 `config.json`。
 
-- `skills/feishu-user-auth/config.json`
+常见安装位置：
+
+- 项目内安装：`./.agents/skills/feishu-user-auth/config.json`
+- 全局安装（`npx skills add ... -g`）：`~/.agents/skills/feishu-user-auth/config.json`
+
+如果你不想改 skill 目录，也可以自己准备一个配置文件，后面通过 `--config` 传入。
 
 格式如下：
 
 ```json
 {
   "appId": "cli_xxx",
-  "appSecret": "xxx",
-  "brand": "feishu",
-  "storeDir": "../../../.feishu-auth",
-  "legacyStoreDir": "state"
+  "appSecret": "replace-with-app-secret",
+  "brand": "feishu"
 }
 ```
 
@@ -54,32 +64,62 @@ description: 管理飞书用户授权与 token 复用。只要用户提到“飞
 
 - `appId`、`appSecret` 必填
 - `brand` 可选，默认 `feishu`
-- `storeDir` 可选，默认指向 `~/.feishu-auth`
+- `storeDir` 可选；如果不填，默认就是 `~/.feishu-auth`
+- 如果显式填写 `storeDir`，可以写绝对路径，也可以写 `~/.feishu-auth`
 - `legacyStoreDir` 可选，默认指向 skill 自己的 `state/`
 
 这套脚本不再依赖系统里的 `FEISHU_APP_ID`、`FEISHU_APP_SECRET`、`FEISHU_BRAND`、`FEISHU_AUTH_*` 环境变量。
 
 ## 执行方式
 
-统一通过脚本入口执行：
+安装后，默认不会自动把 `feishu-auth` 加进 PATH。
+
+最稳妥的调用方式是直接执行安装目录里的 bin：
 
 ```bash
-node skills/feishu-user-auth/scripts/run-auth.js auth
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js auth
+```
+
+如果你是全局安装，可以从任意目录执行：
+
+```bash
+~/.agents/skills/feishu-user-auth/bin/feishu-auth.js auth
+```
+
+如果你想直接用 `feishu-auth` 命令名，可以自己加一个链接：
+
+```bash
+mkdir -p ~/.local/bin
+ln -sf ~/.agents/skills/feishu-user-auth/bin/feishu-auth.js ~/.local/bin/feishu-auth
+```
+
+然后确保 `~/.local/bin` 在 PATH 中，就可以直接执行：
+
+```bash
+feishu-auth auth
 ```
 
 可用命令：
 
 ```bash
-node skills/feishu-user-auth/scripts/run-auth.js auth [--batch-size 60] [--open-id ou_xxx]
-node skills/feishu-user-auth/scripts/run-auth.js user-auth [--batch-size 60] [--open-id ou_xxx]
-node skills/feishu-user-auth/scripts/run-auth.js auth --scope "scope1 scope2"
-node skills/feishu-user-auth/scripts/run-auth.js refresh-token [--open-id ou_xxx]
-node skills/feishu-user-auth/scripts/run-auth.js show-token
-node skills/feishu-user-auth/scripts/run-auth.js show-token --open-id ou_xxx
-node skills/feishu-user-auth/scripts/run-auth.js remove-token --open-id ou_xxx
-node skills/feishu-user-auth/scripts/run-auth.js system-token
-node skills/feishu-user-auth/scripts/run-auth.js system-auth
-node skills/feishu-user-auth/scripts/run-auth.js --config /path/to/config.json auth
+<skill-dir>/bin/feishu-auth.js auth [--batch-size 60] [--open-id ou_xxx]
+<skill-dir>/bin/feishu-auth.js user-auth [--batch-size 60] [--open-id ou_xxx]
+<skill-dir>/bin/feishu-auth.js auth --scope "scope1 scope2"
+<skill-dir>/bin/feishu-auth.js refresh-token [--open-id ou_xxx]
+<skill-dir>/bin/feishu-auth.js refresh-token [--open-id ou_xxx] --force
+<skill-dir>/bin/feishu-auth.js show-token
+<skill-dir>/bin/feishu-auth.js show-token --open-id ou_xxx
+<skill-dir>/bin/feishu-auth.js remove-token --open-id ou_xxx
+<skill-dir>/bin/feishu-auth.js system-token
+<skill-dir>/bin/feishu-auth.js system-auth
+<skill-dir>/bin/feishu-auth.js --config /path/to/config.json auth
+<skill-dir>/bin/feishu-auth.js --help
+```
+
+如果你是在仓库里本地开发，这时才适合在仓库根目录执行源码入口：
+
+```bash
+node skills/feishu-user-auth/scripts/run-auth.js auth
 ```
 
 ## 工作规则
@@ -97,7 +137,7 @@ node skills/feishu-user-auth/scripts/run-auth.js --config /path/to/config.json a
 
 1. 是否走了这个 skill 的脚本，而不是直接跑了别的脚本
 2. `config.json` 里的 `appId` 是否和旧 token 对应的是同一个 app
-3. `~/.feishu-auth/tokens/` 里是否确实有该 app 的记录
+3. 当前 `storeDir/tokens/` 里是否确实有该 app 的记录
 4. 本次要的 scopes 是否超出了历史已授权范围
 5. token 是否已经 `expired`，或者只剩 `needs_refresh`
 
@@ -108,4 +148,4 @@ node skills/feishu-user-auth/scripts/run-auth.js --config /path/to/config.json a
 1. 复用了哪个 `open_id`
 2. 本次是否真的需要重新授权
 3. 如果需要，是因为缺哪些 scopes
-4. token 存在 `~/.feishu-auth` 的哪个文件里
+4. token 最终落在哪个 `storeDir/tokens/<appId>.json` 文件里

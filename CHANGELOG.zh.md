@@ -1,5 +1,16 @@
 # 更新日志
 
+## 0.2.14 - 2026-03-20
+
+### 变更
+- 修复 `feishu-user-auth` 的配置路径解析：`storeDir` 和 `legacyStoreDir` 现在支持 `~/...` 这种用户目录写法。
+- 删除 `skills/feishu-user-auth/config.json` 里的仓库相对 `storeDir` 覆盖，分发安装时默认回到 `~/.feishu-auth`。
+- 将 `.claude-plugin/marketplace.json` 版本号升级到 `0.2.14`。
+
+### 文档
+- 更新 `skills/feishu-user-auth/SKILL.md`，改为说明用户目录默认存储位置，而不是仓库内相对路径。
+- 更新 `README.md`、`README.zh.md`、`AGENTS.md` 和 `skills/feishu-user-auth/SKILL.md`，改为说明真实可执行的安装后 bin 路径（`.agents/skills/.../bin/feishu-auth.js`），同时补充可选的 PATH 软链接方案。
+
 ## 0.2.13 - 2026-03-20
 
 ### 新功能

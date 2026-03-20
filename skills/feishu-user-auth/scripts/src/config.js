@@ -11,6 +11,14 @@ function resolvePath(baseDir, target, fallback) {
     return fallback;
   }
 
+  if (target === "~") {
+    return homedir();
+  }
+
+  if (target.startsWith("~/")) {
+    return join(homedir(), target.slice(2));
+  }
+
   if (isAbsolute(target)) {
     return target;
   }

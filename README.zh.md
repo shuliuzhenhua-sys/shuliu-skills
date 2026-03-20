@@ -110,16 +110,34 @@ npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyi
 
 用于飞书用户 OAuth/device-flow 授权、scope 补授权和本地 token 复用。
 
+项目内安装后：
+
 ```bash
-node skills/feishu-user-auth/scripts/run-auth.js auth
-node skills/feishu-user-auth/scripts/run-auth.js show-token
-node skills/feishu-user-auth/scripts/run-auth.js refresh-token
-node skills/feishu-user-auth/scripts/run-auth.js system-token
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js auth
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js show-token
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js refresh-token
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token
 ```
 
-本地配置文件：
+全局安装（`npx skills add ... -g`）后：
 
-- `skills/feishu-user-auth/config.json`（`appId` / `appSecret` 必填）
+```bash
+~/.agents/skills/feishu-user-auth/bin/feishu-auth.js auth
+```
+
+配置方式：
+
+- 修改安装后 skill 目录里的 `config.json`，其中 `appId` / `appSecret` 必填
+  - 项目内安装：`./.agents/skills/feishu-user-auth/config.json`
+  - 全局安装：`~/.agents/skills/feishu-user-auth/config.json`
+- 或直接使用 `~/.agents/skills/feishu-user-auth/bin/feishu-auth.js --config /path/to/config.json auth`
+
+如果你想直接敲 `feishu-auth`，可以手动链接到 PATH：
+
+```bash
+mkdir -p ~/.local/bin
+ln -sf ~/.agents/skills/feishu-user-auth/bin/feishu-auth.js ~/.local/bin/feishu-auth
+```
 
 ### feishu-bitable
 

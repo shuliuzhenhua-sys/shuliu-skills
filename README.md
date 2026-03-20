@@ -110,16 +110,34 @@ Use this skill by asking in natural language, for example:
 
 Feishu user OAuth/device-flow authorization with local token reuse and scope top-up.
 
+After a project-local install:
+
 ```bash
-node skills/feishu-user-auth/scripts/run-auth.js auth
-node skills/feishu-user-auth/scripts/run-auth.js show-token
-node skills/feishu-user-auth/scripts/run-auth.js refresh-token
-node skills/feishu-user-auth/scripts/run-auth.js system-token
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js auth
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js show-token
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js refresh-token
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token
 ```
 
-Local config file:
+After a global install (`npx skills add ... -g`):
 
-- `skills/feishu-user-auth/config.json` (`appId` / `appSecret` required)
+```bash
+~/.agents/skills/feishu-user-auth/bin/feishu-auth.js auth
+```
+
+Config options:
+
+- Edit the installed skill's `config.json` (`appId` / `appSecret` required)
+  - Project-local install: `./.agents/skills/feishu-user-auth/config.json`
+  - Global install: `~/.agents/skills/feishu-user-auth/config.json`
+- Or run `~/.agents/skills/feishu-user-auth/bin/feishu-auth.js --config /path/to/config.json auth`
+
+If you want the short `feishu-auth` command, add your own PATH symlink:
+
+```bash
+mkdir -p ~/.local/bin
+ln -sf ~/.agents/skills/feishu-user-auth/bin/feishu-auth.js ~/.local/bin/feishu-auth
+```
 
 ### feishu-bitable
 
