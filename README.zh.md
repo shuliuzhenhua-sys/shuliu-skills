@@ -12,6 +12,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-i
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 ```
 
 ## 更新技能
@@ -24,6 +25,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-i
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 ```
 
 ## 可用插件
@@ -33,6 +35,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 | **image-generation-skills** | 图片生成后端 | [banana-proxy](#banana-proxy)、[geek-image](#geek-image)、[ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | 视频生成后端 | [sora-video](#sora-video) |
 | **douyin-tools** | 抖音分享链接解析工具 | [douyin-share-info](#douyin-share-info) |
+| **feishu-tools** | 飞书授权与 token 复用工具 | [feishu-user-auth](#feishu-user-auth) |
 
 ## 可用技能
 
@@ -98,3 +101,18 @@ npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyi
 以自然语言触发即可，例如：
 - “基于 `/path/product.png` 生成主图和详情图”
 - “生成详情图，做 5 张，参数规格风格”
+
+### feishu-user-auth
+
+用于飞书用户 OAuth/device-flow 授权、scope 补授权和本地 token 复用。
+
+```bash
+node skills/feishu-user-auth/scripts/run-auth.js auth
+node skills/feishu-user-auth/scripts/run-auth.js show-token
+node skills/feishu-user-auth/scripts/run-auth.js refresh-token
+node skills/feishu-user-auth/scripts/run-auth.js system-token
+```
+
+本地配置文件：
+
+- `skills/feishu-user-auth/config.json`（`appId` / `appSecret` 必填）

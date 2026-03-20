@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.11 - 2026-03-20
+
+### Features
+- Add new skill `feishu-user-auth` for Feishu user OAuth/device-flow authorization, token reuse, and scope top-up.
+- Add runnable scripts under `skills/feishu-user-auth/scripts/` for `auth`, `system-token`, `show-token`, and `refresh-token`.
+- Add `feishu-tools` plugin group in `.claude-plugin/marketplace.json` and register `./skills/feishu-user-auth`.
+
+### Documentation
+- Update `README.md` and `README.zh.md` with install/usage instructions for `feishu-user-auth`.
+- Update `AGENTS.md` to include the new skill paths, commands, and release/security guidance.
+
 ## 0.2.9 - 2026-02-25
 
 ### Features

@@ -1,0 +1,4 @@
+interface:
+  display_name: "飞书用户授权"
+  short_description: "管理用户 OAuth、scope 补授权和 token 复用"
+  default_prompt: "检查并复用已有飞书用户 token，只在缺少 scopes 或 token 不可用时再发起授权。"

@@ -12,6 +12,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-i
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 ```
 
 ## Update Skill
@@ -24,6 +25,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-i
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 ```
 
 ## Available Plugins
@@ -33,6 +35,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 | **image-generation-skills** | Image generation backends | [banana-proxy](#banana-proxy), [geek-image](#geek-image), [ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | Video generation backends | [sora-video](#sora-video) |
 | **douyin-tools** | Douyin share URL parsing | [douyin-share-info](#douyin-share-info) |
+| **feishu-tools** | Feishu auth and token reuse | [feishu-user-auth](#feishu-user-auth) |
 
 ## Available Skills
 
@@ -98,3 +101,18 @@ Workflow skill for generating ecommerce product main images and detail images fr
 Use this skill by asking in natural language, for example:
 - "Generate ecommerce main image and detail image from `/path/product.png`"
 - "Generate 5 detail images in specification-focused style"
+
+### feishu-user-auth
+
+Feishu user OAuth/device-flow authorization with local token reuse and scope top-up.
+
+```bash
+node skills/feishu-user-auth/scripts/run-auth.js auth
+node skills/feishu-user-auth/scripts/run-auth.js show-token
+node skills/feishu-user-auth/scripts/run-auth.js refresh-token
+node skills/feishu-user-auth/scripts/run-auth.js system-token
+```
+
+Local config file:
+
+- `skills/feishu-user-auth/config.json` (`appId` / `appSecret` required)

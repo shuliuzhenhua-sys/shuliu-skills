@@ -1,5 +1,16 @@
 # 更新日志
 
+## 0.2.11 - 2026-03-20
+
+### 新功能
+- 新增 `feishu-user-auth` skill：用于飞书用户 OAuth/device-flow 授权、token 复用与 scope 补授权。
+- 新增 `skills/feishu-user-auth/scripts/` 可执行脚本，支持 `auth`、`system-token`、`show-token`、`refresh-token`。
+- 在 `.claude-plugin/marketplace.json` 中新增 `feishu-tools` 插件分组并注册 `./skills/feishu-user-auth`。
+
+### 文档
+- 更新 `README.md` 与 `README.zh.md`，补充 `feishu-user-auth` 的安装与使用说明。
+- 更新 `AGENTS.md`，同步新技能路径、命令与发布/安全约束。
+
 ## 0.2.9 - 2026-02-25
 
 ### 新功能

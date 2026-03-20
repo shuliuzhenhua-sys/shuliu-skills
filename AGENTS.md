@@ -7,6 +7,7 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `ecommerce-images`: Workflow skill to generate ecommerce product main/detail images by orchestrating existing image generation skills.
 - `sora-video`: Sora video generation via lnapi.com.
 - `douyin-share-info`: Fetch Douyin basic info from share URLs via TikHub Web API.
+- `feishu-user-auth`: Feishu user OAuth/device-flow authorization, scope top-up, and token reuse.
 
 - `.claude-plugin/marketplace.json`: marketplace metadata, plugin groups, and skill registration.
 - `skills/banana-proxy/SKILL.md`: user-facing skill contract and usage docs.
@@ -23,6 +24,10 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/sora-video/scripts/providers/lnapi.ts`: Lnapi.com provider implementation.
 - `skills/douyin-share-info/SKILL.md`: user-facing skill contract and extraction rules for Douyin share parsing.
 - `skills/douyin-share-info/scripts/main.ts`: CLI entrypoint for TikHub API calls and normalized output.
+- `skills/feishu-user-auth/SKILL.md`: user-facing skill contract and Feishu auth workflow.
+- `skills/feishu-user-auth/scripts/run-auth.js`: CLI entrypoint for auth/system-token/refresh/show/remove flows.
+- `skills/feishu-user-auth/scripts/src/*.js`: OAuth, token store, and scope resolution implementation.
+- `skills/feishu-user-auth/config.json`: local skill config template (`appId`, `appSecret`, `brand`).
 - `README.md` / `README.zh.md`: install and update instructions.
 - `CHANGELOG.md` / `CHANGELOG.zh.md`: release notes.
 
@@ -35,6 +40,7 @@ No build step is required; scripts run directly with Bun.
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info`
+  - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth`
 - Run local generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.jpg`
   - `npx -y bun skills/geek-image/scripts/main.ts --prompt "A cat" --image out.png`
@@ -42,6 +48,10 @@ No build step is required; scripts run directly with Bun.
   - `npx -y bun skills/sora-video/scripts/main.ts --prompt "A running dog" --output video.mp4`
 - Run local Douyin share parsing:
   - `npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyin.com/xxxx/" --json`
+- Run local Feishu user auth flow:
+  - `node skills/feishu-user-auth/scripts/run-auth.js auth`
+  - `node skills/feishu-user-auth/scripts/run-auth.js system-token`
+  - `node skills/feishu-user-auth/scripts/run-auth.js show-token`
 - Batch generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --batch jobs.jsonl --concurrency 4`
 - Validate tracked changes before commit:
@@ -97,5 +107,6 @@ When adding tests later, place them under each skill path (for example `skills/b
 ## Security & Configuration Tips
 - Never hardcode secrets; use `LNAPI_KEY`.
 - Never hardcode secrets; use `LNAPI_KEY`, `GEEKAI_API_KEY`, and `TIKHUB_API_KEY`.
+- Never commit real Feishu credentials or token cache; keep `skills/feishu-user-auth/config.json` as template values only and store runtime tokens under `~/.feishu-auth/`.
 - Review `marketplace.json` version and skill paths before release.
 - Keep provider base URL and API behavior changes documented in `SKILL.md` and changelogs.

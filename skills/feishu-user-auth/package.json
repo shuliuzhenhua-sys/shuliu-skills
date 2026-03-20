@@ -1,0 +1,8 @@
+{
+  "name": "feishu-user-auth-skill",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "feishu-auth": "./bin/feishu-auth.js"
+  }
+}
