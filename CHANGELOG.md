@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.15 - 2026-03-21
+
+### Documentation
+- Update `skills/feishu-bitable/SKILL.md` with two practical modeling guidelines for Feishu Bitable:
+- use integer fields for quantity values to avoid unnecessary decimals
+- prefer views to separate statuses while keeping the total number of views small and manageable
+
 ## 0.2.14 - 2026-03-20
 
 ### Changes
