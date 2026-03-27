@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.16 - 2026-03-23
+
+### Documentation
+- Expand `feishu-approval` skill coverage to include approval file upload for image and attachment controls.
+- Add `skills/feishu-approval/references/file-upload.md` with upload flow, request fields, limits, response usage, and instance value examples.
+- Update `skills/feishu-approval/SKILL.md` and `skills/feishu-approval/references/instance.md` so the skill routes file-upload questions correctly and explains how uploaded file `code` is used in approval instances.
+
 ## 0.2.15 - 2026-03-21
 
 ### Documentation

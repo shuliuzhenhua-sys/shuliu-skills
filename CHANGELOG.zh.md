@@ -1,5 +1,12 @@
 # 更新日志
 
+## 0.2.16 - 2026-03-23
+
+### 文档
+- 扩展 `feishu-approval` skill 覆盖范围，新增审批图片/附件控件的文件上传说明。
+- 新增 `skills/feishu-approval/references/file-upload.md`，整理上传流程、请求字段、大小限制、响应字段用途，以及实例赋值示例。
+- 更新 `skills/feishu-approval/SKILL.md` 与 `skills/feishu-approval/references/instance.md`，让 skill 能正确路由文件上传问题，并明确审批实例中应使用上传返回的文件 `code`。
+
 ## 0.2.15 - 2026-03-21
 
 ### 文档
