@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.17 - 2026-03-28
+
+### Features
+- Add new documentation-first skill `feishu-card` for Feishu interactive cards, including card JSON structure, `interactive` message sending, callback payloads, and message updates.
+- Add `skills/feishu-card/references/` with reusable alert, morning-briefing, and skill-test card templates.
+- Register `./skills/feishu-card` in the `feishu-tools` plugin group and bump `.claude-plugin/marketplace.json` metadata version to `0.2.17`.
+
+### Documentation
+- Update `skills/feishu-card/SKILL.md` to document the correct token flow via `feishu-auth system-token` and clarify that callers must extract only the returned `accessToken`.
+- Update `README.md`, `README.zh.md`, and `AGENTS.md` to include install and usage guidance for `feishu-card`.
+
 ## 0.2.16 - 2026-03-23
 
 ### Documentation

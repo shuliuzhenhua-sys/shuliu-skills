@@ -1,5 +1,16 @@
 # 更新日志
 
+## 0.2.17 - 2026-03-28
+
+### 新功能
+- 新增 `feishu-card` 文档型 skill：覆盖飞书交互卡片 JSON 结构、`interactive` 消息发送、按钮回调与消息更新。
+- 新增 `skills/feishu-card/references/`，提供告警、晨报、技能测试三类可复用卡片模板。
+- 在 `feishu-tools` 插件分组中注册 `./skills/feishu-card`，并将 `.claude-plugin/marketplace.json` 版本号升级到 `0.2.17`。
+
+### 文档
+- 更新 `skills/feishu-card/SKILL.md`，明确正确的 token 获取方式应走 `feishu-auth system-token`，且请求头里只能使用返回 JSON 中的 `accessToken`。
+- 更新 `README.md`、`README.zh.md` 与 `AGENTS.md`，补充 `feishu-card` 的安装与使用说明。
+
 ## 0.2.16 - 2026-03-23
 
 ### 文档

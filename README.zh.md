@@ -15,6 +15,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
 ```
 
 ## 更新技能
@@ -30,6 +31,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
 ```
 
 ## 可用插件
@@ -39,7 +41,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 | **image-generation-skills** | 图片生成后端 | [banana-proxy](#banana-proxy)、[geek-image](#geek-image)、[ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | 视频生成后端 | [sora-video](#sora-video) |
 | **douyin-tools** | 抖音分享链接解析工具 | [douyin-share-info](#douyin-share-info) |
-| **feishu-tools** | 飞书授权、原生审批、token 复用与多维表格工具 | [feishu-user-auth](#feishu-user-auth)、[feishu-bitable](#feishu-bitable)、[feishu-approval](#feishu-approval) |
+| **feishu-tools** | 飞书授权、交互卡片、原生审批、token 复用与多维表格工具 | [feishu-user-auth](#feishu-user-auth)、[feishu-bitable](#feishu-bitable)、[feishu-approval](#feishu-approval)、[feishu-card](#feishu-card) |
 
 ## 可用技能
 
@@ -159,3 +161,27 @@ ln -sf ~/.agents/skills/feishu-user-auth/bin/feishu-auth.js ~/.local/bin/feishu-
   - “创建审批实例时 dateInterval 要怎么传”
   - “approval code not found 是什么问题”
 - 这个 skill 不自带脚本，重点是把官方审批文档按定义、控件、实例、排障分层整理，方便直接回答和拼接 JSON。
+
+### feishu-card
+
+用于飞书交互卡片的文档型 skill，覆盖卡片 JSON 结构、`interactive` 消息发送、按钮回调，以及按 `message_id` 更新卡片。
+
+- 以自然语言触发即可，例如：
+  - “给这个 open_id 发一张飞书交互卡片”
+  - “写一个带两个按钮和 note 区的飞书卡片”
+  - “怎么根据 message_id 更新飞书卡片”
+  - “为什么 `feishu-auth system-token` 不能整段直接塞到 Authorization”
+- 这个 skill 复用 `feishu-user-auth` 提供的系统 token 能力。优先执行：
+
+```bash
+feishu-auth system-token
+```
+
+如果 `feishu-auth` 不在 PATH 里，就直接执行安装后的 bin：
+
+```bash
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token
+~/.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token
+```
+
+- `system-token` 返回的是 JSON，请只取其中的 `accessToken` 放进 `Authorization: Bearer <token>`。

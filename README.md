@@ -15,6 +15,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
 ```
 
 ## Update Skill
@@ -30,6 +31,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
 ```
 
 ## Available Plugins
@@ -39,7 +41,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 | **image-generation-skills** | Image generation backends | [banana-proxy](#banana-proxy), [geek-image](#geek-image), [ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | Video generation backends | [sora-video](#sora-video) |
 | **douyin-tools** | Douyin share URL parsing | [douyin-share-info](#douyin-share-info) |
-| **feishu-tools** | Feishu auth, native approval, token reuse, and Bitable operations | [feishu-user-auth](#feishu-user-auth), [feishu-bitable](#feishu-bitable), [feishu-approval](#feishu-approval) |
+| **feishu-tools** | Feishu auth, interactive cards, native approval, token reuse, and Bitable operations | [feishu-user-auth](#feishu-user-auth), [feishu-bitable](#feishu-bitable), [feishu-approval](#feishu-approval), [feishu-card](#feishu-card) |
 
 ## Available Skills
 
@@ -157,5 +159,29 @@ Documentation-first skill for Feishu native approvals, covering approval definit
   - "How should form_content be written for a Feishu approval definition?"
   - "Help me write a radioV2 control backed by external options"
   - "How do I pass dateInterval when creating an approval instance?"
-  - "What does approval code not found mean?"
+- "What does approval code not found mean?"
 - This skill intentionally ships without scripts and focuses on turning official approval docs into precise field explanations and ready-to-use JSON fragments.
+
+### feishu-card
+
+Documentation-first skill for Feishu interactive cards, covering card JSON structure, `interactive` message sending, callback payloads, and message updates.
+
+- Trigger it with natural language, for example:
+  - "Send an interactive card to this open_id"
+  - "Write a Feishu card with two buttons and a note section"
+  - "How do I update an existing card by message_id?"
+  - "Why does `feishu-auth system-token` fail when I paste it directly into Authorization?"
+- This skill reuses `feishu-user-auth` for token retrieval. Prefer:
+
+```bash
+feishu-auth system-token
+```
+
+If `feishu-auth` is not in PATH, run the installed bin directly:
+
+```bash
+./.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token
+~/.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token
+```
+
+- `system-token` returns JSON. Use only the `accessToken` field in `Authorization: Bearer <token>`.

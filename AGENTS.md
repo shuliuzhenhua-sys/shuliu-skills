@@ -10,6 +10,7 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `feishu-user-auth`: Feishu user OAuth/device-flow authorization, scope top-up, and token reuse.
 - `feishu-bitable`: Feishu Bitable operations for records, fields, views, permissions, formulas, and links.
 - `feishu-approval`: Feishu native approval documentation skill covering approval definitions, form controls, external options, approval instances, and troubleshooting.
+- `feishu-card`: Feishu interactive card documentation skill covering card JSON structure, sending, callbacks, and updates.
 
 - `.claude-plugin/marketplace.json`: marketplace metadata, plugin groups, and skill registration.
 - `skills/banana-proxy/SKILL.md`: user-facing skill contract and usage docs.
@@ -34,6 +35,8 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/feishu-bitable/references/fields.md`: field type and `property` reference guide for Bitable field operations.
 - `skills/feishu-approval/SKILL.md`: user-facing skill contract for Feishu native approval workflows.
 - `skills/feishu-approval/references/*.md`: approval definition, form control, external option, instance, and troubleshooting references.
+- `skills/feishu-card/SKILL.md`: user-facing skill contract for Feishu interactive card workflows.
+- `skills/feishu-card/references/*.json`: reusable card templates for alert, briefing, and skill-test messages.
 - `README.md` / `README.zh.md`: install and update instructions.
 - `CHANGELOG.md` / `CHANGELOG.zh.md`: release notes.
 
@@ -49,6 +52,7 @@ No build step is required; scripts run directly with Bun.
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval`
+  - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card`
 - Run local generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.jpg`
   - `npx -y bun skills/geek-image/scripts/main.ts --prompt "A cat" --image out.png`
@@ -62,6 +66,10 @@ No build step is required; scripts run directly with Bun.
   - Repo-local debugging from repository root: `node skills/feishu-user-auth/scripts/run-auth.js auth`
   - Repo-local debugging from repository root: `node skills/feishu-user-auth/scripts/run-auth.js system-token`
   - Repo-local debugging from repository root: `node skills/feishu-user-auth/scripts/run-auth.js show-token`
+- Run Feishu system-token retrieval for card sending:
+  - Preferred: `feishu-auth system-token`
+  - Installed skill path fallback: `./.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token`
+  - Installed skill path fallback after `-g`: `~/.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token`
 - Batch generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --batch jobs.jsonl --concurrency 4`
 - Validate tracked changes before commit:
