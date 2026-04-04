@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.19 - 2026-04-05
+
+### Changes
+- Switch the marketplace owner metadata from goudan to twodogegg.
+- Update all install and update examples to use https://github.com/twodogegg/shuliu-skills.
+- Prepare the repository for publishing under the twodogegg account.
+
+
 ## 0.2.18 - 2026-04-05
 
 ### Features

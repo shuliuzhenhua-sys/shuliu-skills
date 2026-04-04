@@ -7,16 +7,16 @@
 ## 安装
 
 ```bash
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-image
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill xhs-text2image
+npx skills add https://github.com/twodogegg/shuliu-skills --skill banana-proxy
+npx skills add https://github.com/twodogegg/shuliu-skills --skill geek-image
+npx skills add https://github.com/twodogegg/shuliu-skills --skill ecommerce-images
+npx skills add https://github.com/twodogegg/shuliu-skills --skill sora-video
+npx skills add https://github.com/twodogegg/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-user-auth
+npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-bitable
+npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-approval
+npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-card
+npx skills add https://github.com/twodogegg/shuliu-skills --skill xhs-text2image
 ```
 
 ## 更新技能
@@ -24,16 +24,16 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill xhs-te
 当仓库中的技能更新后，重新执行安装命令即可拉取最新版本：
 
 ```bash
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill banana-proxy
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill geek-image
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill ecommerce-images
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill sora-video
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill douyin-share-info
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-user-auth
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
-npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill xhs-text2image
+npx skills add https://github.com/twodogegg/shuliu-skills --skill banana-proxy
+npx skills add https://github.com/twodogegg/shuliu-skills --skill geek-image
+npx skills add https://github.com/twodogegg/shuliu-skills --skill ecommerce-images
+npx skills add https://github.com/twodogegg/shuliu-skills --skill sora-video
+npx skills add https://github.com/twodogegg/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-user-auth
+npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-bitable
+npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-approval
+npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-card
+npx skills add https://github.com/twodogegg/shuliu-skills --skill xhs-text2image
 ```
 
 ## 可用插件

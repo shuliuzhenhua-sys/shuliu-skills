@@ -1,5 +1,13 @@
 # 更新日志
 
+## 0.2.19 - 2026-04-05
+
+### 变更
+- 将 marketplace owner 元数据从 goudan 切换为 twodogegg。
+- 将所有安装与更新命令示例改为 https://github.com/twodogegg/shuliu-skills。
+- 完成仓库在 twodogegg 账号下发布前的入口整理。
+
+
 ## 0.2.18 - 2026-04-05
 
 ### 新功能

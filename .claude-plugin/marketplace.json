@@ -1,11 +1,11 @@
 {
   "name": "shuliu-skills",
   "owner": {
-    "name": "goudan"
+    "name": "twodogegg"
   },
   "metadata": {
     "description": "Local skills marketplace for shuliu workflows",
-    "version": "0.2.18"
+    "version": "0.2.19"
   },
   "plugins": [
     {
