@@ -16,6 +16,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill xhs-text2image
 ```
 
 ## Update Skill
@@ -32,6 +33,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill xhs-text2image
 ```
 
 ## Available Plugins
@@ -42,6 +44,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 | **video-generation-skills** | Video generation backends | [sora-video](#sora-video) |
 | **douyin-tools** | Douyin share URL parsing | [douyin-share-info](#douyin-share-info) |
 | **feishu-tools** | Feishu auth, interactive cards, native approval, token reuse, and Bitable operations | [feishu-user-auth](#feishu-user-auth), [feishu-bitable](#feishu-bitable), [feishu-approval](#feishu-approval), [feishu-card](#feishu-card) |
+| **xiaohongshu-tools** | Xiaohongshu creator workflows | [xhs-text2image](#xhs-text2image) |
 
 ## Available Skills
 
@@ -185,3 +188,24 @@ If `feishu-auth` is not in PATH, run the installed bin directly:
 ```
 
 - `system-token` returns JSON. Use only the `accessToken` field in `Authorization: Bearer <token>`.
+
+### xhs-text2image
+
+Xiaohongshu creator-platform text-to-image automation for logged-in browser sessions.
+
+- Supports text prompt creation, preview-page theme switching, recolor, redownload, and theme listing
+- Bundles a ready-to-send preview catalog under `skills/xhs-text2image/theme_catalog/`
+- Includes a `catalog` command to refresh every theme sample and regenerate the overview image
+
+Run examples:
+
+```bash
+python3 skills/xhs-text2image/scripts/xhs_text2image.py create --port 9444 --text "小红书主题测试" --theme 科技
+python3 skills/xhs-text2image/scripts/xhs_text2image.py catalog --port 9444 --text "小红书主题测试"
+```
+
+Requirements:
+
+- Python 3
+- `playwright` and `Pillow`
+- A Chrome / Chromium session already logged in to Xiaohongshu Creator and exposed through a CDP port such as `9444`

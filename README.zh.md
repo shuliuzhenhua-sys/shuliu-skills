@@ -16,6 +16,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill xhs-text2image
 ```
 
 ## 更新技能
@@ -32,6 +33,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval
 npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card
+npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill xhs-text2image
 ```
 
 ## 可用插件
@@ -42,6 +44,7 @@ npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu
 | **video-generation-skills** | 视频生成后端 | [sora-video](#sora-video) |
 | **douyin-tools** | 抖音分享链接解析工具 | [douyin-share-info](#douyin-share-info) |
 | **feishu-tools** | 飞书授权、交互卡片、原生审批、token 复用与多维表格工具 | [feishu-user-auth](#feishu-user-auth)、[feishu-bitable](#feishu-bitable)、[feishu-approval](#feishu-approval)、[feishu-card](#feishu-card) |
+| **xiaohongshu-tools** | 小红书创作工作流 | [xhs-text2image](#xhs-text2image) |
 
 ## 可用技能
 
@@ -185,3 +188,24 @@ feishu-auth system-token
 ```
 
 - `system-token` 返回的是 JSON，请只取其中的 `accessToken` 放进 `Authorization: Bearer <token>`。
+
+### xhs-text2image
+
+用于小红书创作平台“文字配图”的自动化 skill，适合接管已登录浏览器会话后直接生成配图。
+
+- 支持输入文案生成图片、在预览页切主题、换配色、重新下载、查看主题列表
+- 自带现成主题预览资产，位于 `skills/xhs-text2image/theme_catalog/`
+- 提供 `catalog` 命令，可一次性刷新全部主题样例并重建总览图
+
+示例命令：
+
+```bash
+python3 skills/xhs-text2image/scripts/xhs_text2image.py create --port 9444 --text "小红书主题测试" --theme 科技
+python3 skills/xhs-text2image/scripts/xhs_text2image.py catalog --port 9444 --text "小红书主题测试"
+```
+
+依赖要求：
+
+- Python 3
+- `playwright` 与 `Pillow`
+- 已登录小红书创作平台的 Chrome / Chromium，并通过 `9444` 之类的 CDP 端口开放调试

@@ -1,0 +1,29 @@
+{
+  "skill_name": "xhs-text2image",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我用 9444 端口接管当前浏览器，在小红书创作平台的文字配图里生成一张“codex 牛逼”，主题选科技，最后把图片下载下来。",
+      "expected_output": "调用 create，传入端口、文案和科技主题，成功返回 job_id 和 download_path。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我现在已经在预览页了，帮我把刚才那张图换成简约主题，再换一次配色，顺便下载更新后的图片。",
+      "expected_output": "调用 update，基于 job_id 切换到简约并换配色，返回新的 download_path。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "看一下我当前这个小红书创作平台页面能选哪些主题，端口还是 9444。",
+      "expected_output": "调用 themes 或 status，返回当前主题列表。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "客户想先看看小红书文字配图这些主题分别长什么样子，你直接给我现成预览图；如果没有，就用文案“小红书主题测试”把全部主题都跑一遍并整理好。",
+      "expected_output": "优先返回 skill 内 theme_catalog 的总览图路径；如果样例不存在或需要刷新，则调用 catalog 生成 overview.jpg、manifest.json 和单图目录。",
+      "files": []
+    }
+  ]
+}

@@ -11,6 +11,7 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `feishu-bitable`: Feishu Bitable operations for records, fields, views, permissions, formulas, and links.
 - `feishu-approval`: Feishu native approval documentation skill covering approval definitions, form controls, external options, approval instances, and troubleshooting.
 - `feishu-card`: Feishu interactive card documentation skill covering card JSON structure, sending, callbacks, and updates.
+- `xhs-text2image`: Xiaohongshu text-to-image automation skill for logged-in creator sessions, theme switching, and bundled theme preview assets.
 
 - `.claude-plugin/marketplace.json`: marketplace metadata, plugin groups, and skill registration.
 - `skills/banana-proxy/SKILL.md`: user-facing skill contract and usage docs.
@@ -37,6 +38,9 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/feishu-approval/references/*.md`: approval definition, form control, external option, instance, and troubleshooting references.
 - `skills/feishu-card/SKILL.md`: user-facing skill contract for Feishu interactive card workflows.
 - `skills/feishu-card/references/*.json`: reusable card templates for alert, briefing, and skill-test messages.
+- `skills/xhs-text2image/SKILL.md`: user-facing skill contract for Xiaohongshu text-to-image generation, theme updates, and preview catalog routing.
+- `skills/xhs-text2image/scripts/xhs_text2image.py`: Python CLI entrypoint for create/update/download/status/themes/catalog flows.
+- `skills/xhs-text2image/theme_catalog/`: bundled overview image, manifest, and per-theme sample images for fast customer previews.
 - `README.md` / `README.zh.md`: install and update instructions.
 - `CHANGELOG.md` / `CHANGELOG.zh.md`: release notes.
 
@@ -53,6 +57,7 @@ No build step is required; scripts run directly with Bun.
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-bitable`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-approval`
   - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill feishu-card`
+  - `npx skills add https://github.com/shuliuzhenhua-sys/shuliu-skills --skill xhs-text2image`
 - Run local generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --prompt "A cat" --image out.jpg`
   - `npx -y bun skills/geek-image/scripts/main.ts --prompt "A cat" --image out.png`
@@ -70,6 +75,9 @@ No build step is required; scripts run directly with Bun.
   - Preferred: `feishu-auth system-token`
   - Installed skill path fallback: `./.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token`
   - Installed skill path fallback after `-g`: `~/.agents/skills/feishu-user-auth/bin/feishu-auth.js system-token`
+- Run local Xiaohongshu text-to-image generation:
+  - `python3 skills/xhs-text2image/scripts/xhs_text2image.py create --port 9444 --text "小红书主题测试" --theme 科技`
+  - `python3 skills/xhs-text2image/scripts/xhs_text2image.py catalog --port 9444 --text "小红书主题测试"`
 - Batch generation:
   - `npx -y bun skills/banana-proxy/scripts/main.ts --batch jobs.jsonl --concurrency 4`
 - Validate tracked changes before commit:
@@ -98,6 +106,8 @@ There is no formal test suite yet. Validate behavior with smoke tests:
 4. Verify required env var behavior (`LNAPI_KEY` and `GEEKAI_API_KEY` missing should fail clearly).
 5. Run one Douyin share-url command and confirm normalized JSON fields are present.
 6. Verify required env var behavior (`TIKHUB_API_KEY` missing should fail clearly).
+7. Run one Xiaohongshu `create` command against a logged-in browser session and confirm `download_path` is returned.
+8. Run one Xiaohongshu `catalog` command and confirm `theme_catalog/overview.jpg` plus per-theme images are created.
 
 When adding tests later, place them under each skill path (for example `skills/banana-proxy/tests/` or `skills/douyin-share-info/tests/`) and name files `*.test.ts`.
 

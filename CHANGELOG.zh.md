@@ -1,5 +1,16 @@
 # 更新日志
 
+## 0.2.18 - 2026-04-05
+
+### 新功能
+- 新增 xhs-text2image skill：用于小红书创作平台文字配图自动化、主题切换，以及面向客户预览的现成主题样例资产。
+- 新增 skills/xhs-text2image/theme_catalog/，包含自动生成的总览图、manifest 和每个主题的单图样例。
+- 在新的 xiaohongshu-tools 插件分组中注册 ./skills/xhs-text2image，并将 .claude-plugin/marketplace.json 版本号升级到 0.2.18。
+
+### 文档
+- 更新 README.md、README.zh.md 与 AGENTS.md，补充 xhs-text2image 的安装与使用说明。
+
+
 ## 0.2.17 - 2026-03-28
 
 ### 新功能

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.18 - 2026-04-05
+
+### Features
+- Add new skill xhs-text2image for Xiaohongshu Creator text-to-image automation, theme switching, and bundled customer preview assets.
+- Add skills/xhs-text2image/theme_catalog/ with a generated overview image, manifest, and per-theme sample images.
+- Register ./skills/xhs-text2image in a new xiaohongshu-tools plugin group and bump .claude-plugin/marketplace.json metadata version to 0.2.18.
+
+### Documentation
+- Update README.md, README.zh.md, and AGENTS.md with install and usage guidance for xhs-text2image.
+
+
 ## 0.2.17 - 2026-03-28
 
 ### Features

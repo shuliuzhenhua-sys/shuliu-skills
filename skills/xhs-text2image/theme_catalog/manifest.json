@@ -1,0 +1,90 @@
+{
+  "ok": true,
+  "text": "小红书主题测试",
+  "generated_at": "2026-04-05 02:54:20",
+  "page_url": "https://creator.xiaohongshu.com/publish/publish?from=homepage&target=image",
+  "overview_path": "overview.jpg",
+  "images_dir": "images",
+  "themes": [
+    {
+      "theme": "基础",
+      "image_path": "images/基础.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c1154-3057-11f1-b017-069406b0e7d4_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "边框",
+      "image_path": "images/边框.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c4462-3057-11f1-8607-7e01c75d0986_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "备忘",
+      "image_path": "images/备忘.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c3a94-3057-11f1-acd4-02446456a2e5_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "简约",
+      "image_path": "images/简约.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c286a-3057-11f1-ad98-42a6b64a020e_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "便签",
+      "image_path": "images/便签.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811bf46c-3057-11f1-989f-426bc31231c4_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "光影",
+      "image_path": "images/光影.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c3828-3057-11f1-9861-be75af8de3f5_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "涂写",
+      "image_path": "images/涂写.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c4458-3057-11f1-b405-66068f7f08a6_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "手写",
+      "image_path": "images/手写.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c0006-3057-11f1-b8f1-2e5d4e3cfc32_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "弥散",
+      "image_path": "images/弥散.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c1794-3057-11f1-85bf-7a87af8bab65_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "几何",
+      "image_path": "images/几何.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_811c53d0-3057-11f1-8d0d-22b37bc0e32c_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "书摘",
+      "image_path": "images/书摘.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_84a889ba-3057-11f1-a7d6-c636d7654393_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "札记",
+      "image_path": "images/札记.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_84a8abd4-3057-11f1-85bf-7a87af8bab65_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "科技",
+      "image_path": "images/科技.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_84a8b2b4-3057-11f1-afd1-7a3f344b4503_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "贺卡",
+      "image_path": "images/贺卡.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_84a8b08e-3057-11f1-b275-4a9b9df697d9_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "手帐",
+      "image_path": "images/手帐.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_84a8d604-3057-11f1-8976-8e698b7124d7_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    },
+    {
+      "theme": "印刷",
+      "image_path": "images/印刷.jpg",
+      "image_url": "http://sns-na-i11.xhscdn.com/zeusengine-gpu-server/zs2tab_84a8ed10-3057-11f1-9582-f6317236eacf_uid_69b5b7f90000000033025d6b-0_locale_zh-CN_.jpg"
+    }
+  ]
+}
