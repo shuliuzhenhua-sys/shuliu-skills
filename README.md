@@ -12,6 +12,7 @@ npx skills add https://github.com/twodogegg/shuliu-skills --skill geek-image
 npx skills add https://github.com/twodogegg/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/twodogegg/shuliu-skills --skill sora-video
 npx skills add https://github.com/twodogegg/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/twodogegg/shuliu-skills --skill wechat-mp-scraper
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-approval
@@ -29,6 +30,7 @@ npx skills add https://github.com/twodogegg/shuliu-skills --skill geek-image
 npx skills add https://github.com/twodogegg/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/twodogegg/shuliu-skills --skill sora-video
 npx skills add https://github.com/twodogegg/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/twodogegg/shuliu-skills --skill wechat-mp-scraper
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-approval
@@ -43,6 +45,7 @@ npx skills add https://github.com/twodogegg/shuliu-skills --skill xhs-text2image
 | **image-generation-skills** | Image generation backends | [banana-proxy](#banana-proxy), [geek-image](#geek-image), [ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | Video generation backends | [sora-video](#sora-video) |
 | **douyin-tools** | Douyin share URL parsing | [douyin-share-info](#douyin-share-info) |
+| **wechat-tools** | WeChat public account article scraping | [wechat-mp-scraper](#wechat-mp-scraper) |
 | **feishu-tools** | Feishu auth, interactive cards, native approval, token reuse, and Bitable operations | [feishu-user-auth](#feishu-user-auth), [feishu-bitable](#feishu-bitable), [feishu-approval](#feishu-approval), [feishu-card](#feishu-card) |
 | **xiaohongshu-tools** | Xiaohongshu creator workflows | [xhs-text2image](#xhs-text2image) |
 
@@ -96,6 +99,25 @@ npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyi
 Environment variable:
 
 - `TIKHUB_API_KEY` (required)
+
+### wechat-mp-scraper
+
+Scrape and analyze publicly accessible WeChat public-account article pages.
+
+```bash
+python3 skills/wechat-mp-scraper/scripts/scrape_wechat_mp.py \
+  "https://mp.weixin.qq.com/s/xxxx" \
+  --output-dir ~/wechat-mp-scraper-runs
+```
+
+Outputs include:
+
+- `article.html`
+- `content.md`
+- `content.json`
+- `report.md`
+- `urls.json`
+- downloaded assets and animation snippets
 
 ### ecommerce-images
 

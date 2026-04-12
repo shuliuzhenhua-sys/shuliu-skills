@@ -12,6 +12,7 @@ npx skills add https://github.com/twodogegg/shuliu-skills --skill geek-image
 npx skills add https://github.com/twodogegg/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/twodogegg/shuliu-skills --skill sora-video
 npx skills add https://github.com/twodogegg/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/twodogegg/shuliu-skills --skill wechat-mp-scraper
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-approval
@@ -29,6 +30,7 @@ npx skills add https://github.com/twodogegg/shuliu-skills --skill geek-image
 npx skills add https://github.com/twodogegg/shuliu-skills --skill ecommerce-images
 npx skills add https://github.com/twodogegg/shuliu-skills --skill sora-video
 npx skills add https://github.com/twodogegg/shuliu-skills --skill douyin-share-info
+npx skills add https://github.com/twodogegg/shuliu-skills --skill wechat-mp-scraper
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-user-auth
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-bitable
 npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-approval
@@ -43,6 +45,7 @@ npx skills add https://github.com/twodogegg/shuliu-skills --skill xhs-text2image
 | **image-generation-skills** | 图片生成后端 | [banana-proxy](#banana-proxy)、[geek-image](#geek-image)、[ecommerce-images](#ecommerce-images) |
 | **video-generation-skills** | 视频生成后端 | [sora-video](#sora-video) |
 | **douyin-tools** | 抖音分享链接解析工具 | [douyin-share-info](#douyin-share-info) |
+| **wechat-tools** | 微信公众号文章抓取工具 | [wechat-mp-scraper](#wechat-mp-scraper) |
 | **feishu-tools** | 飞书授权、交互卡片、原生审批、token 复用与多维表格工具 | [feishu-user-auth](#feishu-user-auth)、[feishu-bitable](#feishu-bitable)、[feishu-approval](#feishu-approval)、[feishu-card](#feishu-card) |
 | **xiaohongshu-tools** | 小红书创作工作流 | [xhs-text2image](#xhs-text2image) |
 
@@ -96,6 +99,25 @@ npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyi
 环境变量：
 
 - `TIKHUB_API_KEY`（必填）
+
+### wechat-mp-scraper
+
+用于抓取和拆解公开可访问的微信公众号文章页，输出 HTML、正文、资源列表、报告与素材文件。
+
+```bash
+python3 skills/wechat-mp-scraper/scripts/scrape_wechat_mp.py \
+  "https://mp.weixin.qq.com/s/xxxx" \
+  --output-dir ~/wechat-mp-scraper-runs
+```
+
+主要输出：
+
+- `article.html`
+- `content.md`
+- `content.json`
+- `report.md`
+- `urls.json`
+- 下载后的素材与动画线索文件
 
 ### ecommerce-images
 

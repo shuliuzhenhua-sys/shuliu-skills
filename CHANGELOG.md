@@ -1,23 +1,21 @@
 # Changelog
 
-## 0.2.19 - 2026-04-05
+## Unreleased
 
 ### Changes
-- Switch the marketplace owner metadata from goudan to twodogegg.
-- Update all install and update examples to use https://github.com/twodogegg/shuliu-skills.
-- Prepare the repository for publishing under the twodogegg account.
-
-
-## 0.2.18 - 2026-04-05
-
-### Features
-- Add new skill xhs-text2image for Xiaohongshu Creator text-to-image automation, theme switching, and bundled customer preview assets.
-- Add skills/xhs-text2image/theme_catalog/ with a generated overview image, manifest, and per-theme sample images.
-- Register ./skills/xhs-text2image in a new xiaohongshu-tools plugin group and bump .claude-plugin/marketplace.json metadata version to 0.2.18.
+- Refactor `feishu-user-auth` from single-tenant config to a pure multi-tenant config model with top-level `tenants` and optional `defaultTenant`.
+- Add `--tenant <key>` selection for all config-dependent `feishu-auth` commands, while allowing fallback to `defaultTenant` when configured.
+- Keep token storage keyed by real `appId` so existing app-bound token reuse semantics remain intact.
+- Add new skill `xhs-text2image` for Xiaohongshu Creator text-to-image automation, theme switching, and bundled customer preview assets.
+- Add `skills/xhs-text2image/theme_catalog/` with a generated overview image, manifest, and per-theme sample images.
+- Register `./skills/xhs-text2image` in a new `xiaohongshu-tools` plugin group and bump `.claude-plugin/marketplace.json` metadata version to `0.2.18`.
+- Add new skill `wechat-mp-scraper` for scraping public WeChat public-account article pages, exporting HTML/content/assets, and extracting animation clues.
+- Register `./skills/wechat-mp-scraper` in a new `wechat-tools` plugin group and bump `.claude-plugin/marketplace.json` metadata version to `0.2.20`.
 
 ### Documentation
-- Update README.md, README.zh.md, and AGENTS.md with install and usage guidance for xhs-text2image.
-
+- Update `skills/feishu-user-auth/SKILL.md`, `skills/feishu-user-auth/config.json`, and CLI help text to document tenant-based usage and the new config shape.
+- Update `README.md`, `README.zh.md`, and `AGENTS.md` with install and usage guidance for `xhs-text2image`.
+- Update `README.md`, `README.zh.md`, and `AGENTS.md` with install and usage guidance for `wechat-mp-scraper`.
 
 ## 0.2.17 - 2026-03-28
 

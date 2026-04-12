@@ -7,6 +7,7 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `ecommerce-images`: Workflow skill to generate ecommerce product main/detail images by orchestrating existing image generation skills.
 - `sora-video`: Sora video generation via lnapi.com.
 - `douyin-share-info`: Fetch Douyin basic info from share URLs via TikHub Web API.
+- `wechat-mp-scraper`: Scrape public WeChat article pages, export HTML/content/assets, and analyze animation clues.
 - `feishu-user-auth`: Feishu user OAuth/device-flow authorization, scope top-up, and token reuse.
 - `feishu-bitable`: Feishu Bitable operations for records, fields, views, permissions, formulas, and links.
 - `feishu-approval`: Feishu native approval documentation skill covering approval definitions, form controls, external options, approval instances, and troubleshooting.
@@ -28,6 +29,9 @@ This repository is a Claude Code skills marketplace currently focused on:
 - `skills/sora-video/scripts/providers/lnapi.ts`: Lnapi.com provider implementation.
 - `skills/douyin-share-info/SKILL.md`: user-facing skill contract and extraction rules for Douyin share parsing.
 - `skills/douyin-share-info/scripts/main.ts`: CLI entrypoint for TikHub API calls and normalized output.
+- `skills/wechat-mp-scraper/SKILL.md`: user-facing skill contract for WeChat public-account article scraping.
+- `skills/wechat-mp-scraper/scripts/scrape_wechat_mp.py`: Python CLI entrypoint for HTML/content/resource extraction.
+- `skills/wechat-mp-scraper/references/output-format.md`: output field reference for generated report/content/resource files.
 - `skills/feishu-user-auth/SKILL.md`: user-facing skill contract and Feishu auth workflow.
 - `skills/feishu-user-auth/scripts/run-auth.js`: CLI entrypoint for auth/system-token/refresh/show/remove flows.
 - `skills/feishu-user-auth/scripts/src/*.js`: OAuth, token store, and scope resolution implementation.
@@ -53,6 +57,7 @@ No build step is required; scripts run directly with Bun.
   - `npx skills add https://github.com/twodogegg/shuliu-skills --skill ecommerce-images`
   - `npx skills add https://github.com/twodogegg/shuliu-skills --skill sora-video`
   - `npx skills add https://github.com/twodogegg/shuliu-skills --skill douyin-share-info`
+  - `npx skills add https://github.com/twodogegg/shuliu-skills --skill wechat-mp-scraper`
   - `npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-user-auth`
   - `npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-bitable`
   - `npx skills add https://github.com/twodogegg/shuliu-skills --skill feishu-approval`
@@ -65,6 +70,8 @@ No build step is required; scripts run directly with Bun.
   - `npx -y bun skills/sora-video/scripts/main.ts --prompt "A running dog" --output video.mp4`
 - Run local Douyin share parsing:
   - `npx -y bun skills/douyin-share-info/scripts/main.ts --share-url "https://v.douyin.com/xxxx/" --json`
+- Run local WeChat article scraping:
+  - `python3 skills/wechat-mp-scraper/scripts/scrape_wechat_mp.py "https://mp.weixin.qq.com/s/xxxx" --output-dir ~/wechat-mp-scraper-runs`
 - Run local Feishu user auth flow:
   - Installed skill usage in a project: `./.agents/skills/feishu-user-auth/bin/feishu-auth.js auth`
   - Installed skill usage after `-g`: `~/.agents/skills/feishu-user-auth/bin/feishu-auth.js auth`
